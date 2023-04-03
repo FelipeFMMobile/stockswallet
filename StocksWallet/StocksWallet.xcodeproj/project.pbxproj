@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC23CDE229DB48D600E276A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC23CDE129DB48D600E276A5 /* README.md */; };
 		BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */; };
 		BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA029D48659003FBA45 /* Persistence.swift */; };
 		BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC23CDE129DB48D600E276A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		BCA92A9B29D48659003FBA45 /* StocksWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletApp.swift; sourceTree = "<group>"; };
 		BCA92AA029D48659003FBA45 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		BCA92A9229D48659003FBA45 = {
 			isa = PBXGroup;
 			children = (
+				BC23CDE129DB48D600E276A5 /* README.md */,
 				BCA92A9D29D48659003FBA45 /* StocksWallet */,
 				BCA92AB429D4865A003FBA45 /* StocksWalletTests */,
 				BCA92ABE29D4865A003FBA45 /* StocksWalletUITests */,
@@ -262,6 +265,7 @@
 			files = (
 				BCA92AD029D488A5003FBA45 /* .swiftlint.yml in Resources */,
 				BCA92AAC29D4865A003FBA45 /* Preview Assets.xcassets in Resources */,
+				BC23CDE229DB48D600E276A5 /* README.md in Resources */,
 				BCA92AA829D4865A003FBA45 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
