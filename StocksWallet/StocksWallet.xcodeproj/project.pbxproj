@@ -1,0 +1,711 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */; };
+		BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA029D48659003FBA45 /* Persistence.swift */; };
+		BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */; };
+		BCA92AA629D48659003FBA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA529D48659003FBA45 /* ContentView.swift */; };
+		BCA92AA829D4865A003FBA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA92AA729D4865A003FBA45 /* Assets.xcassets */; };
+		BCA92AAC29D4865A003FBA45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA92AAB29D4865A003FBA45 /* Preview Assets.xcassets */; };
+		BCA92AB629D4865A003FBA45 /* StocksWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AB529D4865A003FBA45 /* StocksWalletTests.swift */; };
+		BCA92AC029D4865A003FBA45 /* StocksWalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92ABF29D4865A003FBA45 /* StocksWalletUITests.swift */; };
+		BCA92AC229D4865A003FBA45 /* StocksWalletUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AC129D4865A003FBA45 /* StocksWalletUITestsLaunchTests.swift */; };
+		BCA92AD029D488A5003FBA45 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BCA92ACF29D488A5003FBA45 /* .swiftlint.yml */; };
+		BCA92AD429D489A1003FBA45 /* SwiftApiSDK in Frameworks */ = {isa = PBXBuildFile; productRef = BCA92AD329D489A1003FBA45 /* SwiftApiSDK */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCA92AB229D4865A003FBA45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCA92A9329D48659003FBA45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCA92A9A29D48659003FBA45;
+			remoteInfo = StocksWallet;
+		};
+		BCA92ABC29D4865A003FBA45 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCA92A9329D48659003FBA45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCA92A9A29D48659003FBA45;
+			remoteInfo = StocksWallet;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCA92A9B29D48659003FBA45 /* StocksWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletApp.swift; sourceTree = "<group>"; };
+		BCA92AA029D48659003FBA45 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		BCA92AA329D48659003FBA45 /* StocksWallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StocksWallet.xcdatamodel; sourceTree = "<group>"; };
+		BCA92AA529D48659003FBA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BCA92AA729D4865A003FBA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BCA92AA929D4865A003FBA45 /* StocksWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StocksWallet.entitlements; sourceTree = "<group>"; };
+		BCA92AAB29D4865A003FBA45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BCA92AB129D4865A003FBA45 /* StocksWalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksWalletTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA92AB529D4865A003FBA45 /* StocksWalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletTests.swift; sourceTree = "<group>"; };
+		BCA92ABB29D4865A003FBA45 /* StocksWalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StocksWalletUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCA92ABF29D4865A003FBA45 /* StocksWalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletUITests.swift; sourceTree = "<group>"; };
+		BCA92AC129D4865A003FBA45 /* StocksWalletUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BCA92ACF29D488A5003FBA45 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCA92A9829D48659003FBA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA92AD429D489A1003FBA45 /* SwiftApiSDK in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA92AAE29D4865A003FBA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA92AB829D4865A003FBA45 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCA92A9229D48659003FBA45 = {
+			isa = PBXGroup;
+			children = (
+				BCA92A9D29D48659003FBA45 /* StocksWallet */,
+				BCA92AB429D4865A003FBA45 /* StocksWalletTests */,
+				BCA92ABE29D4865A003FBA45 /* StocksWalletUITests */,
+				BCA92ACE29D48881003FBA45 /* SupportingFiles */,
+				BCA92A9C29D48659003FBA45 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCA92A9C29D48659003FBA45 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92A9B29D48659003FBA45 /* StocksWallet.app */,
+				BCA92AB129D4865A003FBA45 /* StocksWalletTests.xctest */,
+				BCA92ABB29D4865A003FBA45 /* StocksWalletUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
+				BCA92AA029D48659003FBA45 /* Persistence.swift */,
+				BCA92AA529D48659003FBA45 /* ContentView.swift */,
+				BCA92AA729D4865A003FBA45 /* Assets.xcassets */,
+				BCA92AA929D4865A003FBA45 /* StocksWallet.entitlements */,
+				BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */,
+				BCA92AAA29D4865A003FBA45 /* Preview Content */,
+			);
+			path = StocksWallet;
+			sourceTree = "<group>";
+		};
+		BCA92AAA29D4865A003FBA45 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92AAB29D4865A003FBA45 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		BCA92AB429D4865A003FBA45 /* StocksWalletTests */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92AB529D4865A003FBA45 /* StocksWalletTests.swift */,
+			);
+			path = StocksWalletTests;
+			sourceTree = "<group>";
+		};
+		BCA92ABE29D4865A003FBA45 /* StocksWalletUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92ABF29D4865A003FBA45 /* StocksWalletUITests.swift */,
+				BCA92AC129D4865A003FBA45 /* StocksWalletUITestsLaunchTests.swift */,
+			);
+			path = StocksWalletUITests;
+			sourceTree = "<group>";
+		};
+		BCA92ACE29D48881003FBA45 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92ACF29D488A5003FBA45 /* .swiftlint.yml */,
+			);
+			name = SupportingFiles;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCA92A9A29D48659003FBA45 /* StocksWallet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCA92AC529D4865A003FBA45 /* Build configuration list for PBXNativeTarget "StocksWallet" */;
+			buildPhases = (
+				BCA92A9729D48659003FBA45 /* Sources */,
+				BCA92A9829D48659003FBA45 /* Frameworks */,
+				BCA92A9929D48659003FBA45 /* Resources */,
+				BCA92ADF29D48F41003FBA45 /* SwiftLint */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCA92ADA29D48C3C003FBA45 /* PBXTargetDependency */,
+			);
+			name = StocksWallet;
+			packageProductDependencies = (
+				BCA92AD329D489A1003FBA45 /* SwiftApiSDK */,
+			);
+			productName = StocksWallet;
+			productReference = BCA92A9B29D48659003FBA45 /* StocksWallet.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCA92AB029D4865A003FBA45 /* StocksWalletTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCA92AC829D4865A003FBA45 /* Build configuration list for PBXNativeTarget "StocksWalletTests" */;
+			buildPhases = (
+				BCA92AAD29D4865A003FBA45 /* Sources */,
+				BCA92AAE29D4865A003FBA45 /* Frameworks */,
+				BCA92AAF29D4865A003FBA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCA92AB329D4865A003FBA45 /* PBXTargetDependency */,
+			);
+			name = StocksWalletTests;
+			productName = StocksWalletTests;
+			productReference = BCA92AB129D4865A003FBA45 /* StocksWalletTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BCA92ABA29D4865A003FBA45 /* StocksWalletUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCA92ACB29D4865A003FBA45 /* Build configuration list for PBXNativeTarget "StocksWalletUITests" */;
+			buildPhases = (
+				BCA92AB729D4865A003FBA45 /* Sources */,
+				BCA92AB829D4865A003FBA45 /* Frameworks */,
+				BCA92AB929D4865A003FBA45 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCA92ABD29D4865A003FBA45 /* PBXTargetDependency */,
+			);
+			name = StocksWalletUITests;
+			productName = StocksWalletUITests;
+			productReference = BCA92ABB29D4865A003FBA45 /* StocksWalletUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCA92A9329D48659003FBA45 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					BCA92A9A29D48659003FBA45 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					BCA92AB029D4865A003FBA45 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = BCA92A9A29D48659003FBA45;
+					};
+					BCA92ABA29D4865A003FBA45 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = BCA92A9A29D48659003FBA45;
+					};
+				};
+			};
+			buildConfigurationList = BCA92A9629D48659003FBA45 /* Build configuration list for PBXProject "StocksWallet" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BCA92A9229D48659003FBA45;
+			packageReferences = (
+				BCA92AD229D489A1003FBA45 /* XCRemoteSwiftPackageReference "SwiftApiSDK" */,
+			);
+			productRefGroup = BCA92A9C29D48659003FBA45 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCA92A9A29D48659003FBA45 /* StocksWallet */,
+				BCA92AB029D4865A003FBA45 /* StocksWalletTests */,
+				BCA92ABA29D4865A003FBA45 /* StocksWalletUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCA92A9929D48659003FBA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA92AD029D488A5003FBA45 /* .swiftlint.yml in Resources */,
+				BCA92AAC29D4865A003FBA45 /* Preview Assets.xcassets in Resources */,
+				BCA92AA829D4865A003FBA45 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA92AAF29D4865A003FBA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA92AB929D4865A003FBA45 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		BCA92ADF29D48F41003FBA45 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCA92A9729D48659003FBA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */,
+				BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */,
+				BCA92AA629D48659003FBA45 /* ContentView.swift in Sources */,
+				BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA92AAD29D4865A003FBA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA92AB629D4865A003FBA45 /* StocksWalletTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCA92AB729D4865A003FBA45 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCA92AC229D4865A003FBA45 /* StocksWalletUITestsLaunchTests.swift in Sources */,
+				BCA92AC029D4865A003FBA45 /* StocksWalletUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCA92AB329D4865A003FBA45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCA92A9A29D48659003FBA45 /* StocksWallet */;
+			targetProxy = BCA92AB229D4865A003FBA45 /* PBXContainerItemProxy */;
+		};
+		BCA92ABD29D4865A003FBA45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCA92A9A29D48659003FBA45 /* StocksWallet */;
+			targetProxy = BCA92ABC29D4865A003FBA45 /* PBXContainerItemProxy */;
+		};
+		BCA92ADA29D48C3C003FBA45 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = BCA92AD929D48C3C003FBA45 /* SwiftLintPlugin */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		BCA92AC329D4865A003FBA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BCA92AC429D4865A003FBA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		BCA92AC629D4865A003FBA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.fmmobile.stockswallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCA92AC729D4865A003FBA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.fmmobile.stockswallet;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BCA92AC929D4865A003FBA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FMMobile.StocksWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StocksWallet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StocksWallet";
+			};
+			name = Debug;
+		};
+		BCA92ACA29D4865A003FBA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FMMobile.StocksWalletTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StocksWallet.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StocksWallet";
+			};
+			name = Release;
+		};
+		BCA92ACC29D4865A003FBA45 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FMMobile.StocksWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StocksWallet;
+			};
+			name = Debug;
+		};
+		BCA92ACD29D4865A003FBA45 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				MACOSX_DEPLOYMENT_TARGET = 13.1;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = FMMobile.StocksWalletUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = StocksWallet;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCA92A9629D48659003FBA45 /* Build configuration list for PBXProject "StocksWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCA92AC329D4865A003FBA45 /* Debug */,
+				BCA92AC429D4865A003FBA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCA92AC529D4865A003FBA45 /* Build configuration list for PBXNativeTarget "StocksWallet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCA92AC629D4865A003FBA45 /* Debug */,
+				BCA92AC729D4865A003FBA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCA92AC829D4865A003FBA45 /* Build configuration list for PBXNativeTarget "StocksWalletTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCA92AC929D4865A003FBA45 /* Debug */,
+				BCA92ACA29D4865A003FBA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCA92ACB29D4865A003FBA45 /* Build configuration list for PBXNativeTarget "StocksWalletUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCA92ACC29D4865A003FBA45 /* Debug */,
+				BCA92ACD29D4865A003FBA45 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BCA92AD229D489A1003FBA45 /* XCRemoteSwiftPackageReference "SwiftApiSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FelipeFMMobile/SwiftApiSDK";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		BCA92AD529D48B49003FBA45 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BCA92AD329D489A1003FBA45 /* SwiftApiSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCA92AD229D489A1003FBA45 /* XCRemoteSwiftPackageReference "SwiftApiSDK" */;
+			productName = SwiftApiSDK;
+		};
+		BCA92AD929D48C3C003FBA45 /* SwiftLintPlugin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCA92AD529D48B49003FBA45 /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = "plugin:SwiftLintPlugin";
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BCA92AA329D48659003FBA45 /* StocksWallet.xcdatamodel */,
+			);
+			currentVersion = BCA92AA329D48659003FBA45 /* StocksWallet.xcdatamodel */;
+			path = StocksWallet.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = BCA92A9329D48659003FBA45 /* Project object */;
+}

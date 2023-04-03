@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swiftapisdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FelipeFMMobile/SwiftApiSDK",
+      "state" : {
+        "revision" : "15d28ec57cadc19b9dfd710061eb188a388b582b",
+        "version" : "1.0.4"
+      }
+    }
+  ],
+  "version" : 2
+}
