@@ -13,8 +13,12 @@ struct StocksWalletApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+//                .environment(\.managedObjectContext,
+//                              persistenceController.container.viewContext)
+            ListWalletUIView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(WalletEnviroment())
         }
     }
 }

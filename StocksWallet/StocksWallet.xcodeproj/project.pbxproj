@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC09F6B329E8CA4A009DAF3D /* ListWalletRowUIView.swift */; };
+		BC0DC4EC29E621C40031BC30 /* ListWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC4EB29E621C40031BC30 /* ListWalletUIView.swift */; };
+		BC0DC4EE29E629C70031BC30 /* WalletEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC4ED29E629C70031BC30 /* WalletEnviroment.swift */; };
 		BC23CDE229DB48D600E276A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC23CDE129DB48D600E276A5 /* README.md */; };
+		BC95B57E29ECA5C7009D3035 /* CreateWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */; };
 		BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */; };
 		BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA029D48659003FBA45 /* Persistence.swift */; };
 		BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */; };
@@ -39,7 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BC09F6B329E8CA4A009DAF3D /* ListWalletRowUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWalletRowUIView.swift; sourceTree = "<group>"; };
+		BC0DC4EB29E621C40031BC30 /* ListWalletUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWalletUIView.swift; sourceTree = "<group>"; };
+		BC0DC4ED29E629C70031BC30 /* WalletEnviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletEnviroment.swift; sourceTree = "<group>"; };
 		BC23CDE129DB48D600E276A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletUIView.swift; sourceTree = "<group>"; };
 		BCA92A9B29D48659003FBA45 /* StocksWallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StocksWallet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletApp.swift; sourceTree = "<group>"; };
 		BCA92AA029D48659003FBA45 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -82,6 +90,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BC0DC4E829E621110031BC30 /* Wallet */ = {
+			isa = PBXGroup;
+			children = (
+				BC0DC4EA29E621820031BC30 /* List */,
+				BC0DC4E929E621230031BC30 /* Create */,
+			);
+			path = Wallet;
+			sourceTree = "<group>";
+		};
+		BC0DC4E929E621230031BC30 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */,
+			);
+			path = Create;
+			sourceTree = "<group>";
+		};
+		BC0DC4EA29E621820031BC30 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BC0DC4ED29E629C70031BC30 /* WalletEnviroment.swift */,
+				BC0DC4EB29E621C40031BC30 /* ListWalletUIView.swift */,
+				BC09F6B329E8CA4A009DAF3D /* ListWalletRowUIView.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
 		BCA92A9229D48659003FBA45 = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +142,7 @@
 		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
 			isa = PBXGroup;
 			children = (
+				BC0DC4E829E621110031BC30 /* Wallet */,
 				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
 				BCA92AA029D48659003FBA45 /* Persistence.swift */,
 				BCA92AA529D48659003FBA45 /* ContentView.swift */,
@@ -220,7 +256,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
 					BCA92A9A29D48659003FBA45 = {
 						CreatedOnToolsVersion = 14.2;
@@ -313,8 +349,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */,
+				BC95B57E29ECA5C7009D3035 /* CreateWalletUIView.swift in Sources */,
+				BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */,
 				BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */,
 				BCA92AA629D48659003FBA45 /* ContentView.swift in Sources */,
+				BC0DC4EE29E629C70031BC30 /* WalletEnviroment.swift in Sources */,
+				BC0DC4EC29E621C40031BC30 /* ListWalletUIView.swift in Sources */,
 				BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +429,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -447,6 +488,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -473,6 +515,7 @@
 				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -511,6 +554,7 @@
 				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -546,6 +590,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -568,6 +613,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -589,6 +635,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -610,6 +657,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
