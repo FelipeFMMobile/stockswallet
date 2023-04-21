@@ -18,9 +18,7 @@ struct ListWalletUIView: View {
         NavigationStack(path: $enviroment.path) {
             List {
                 ForEach(wallets) { wallet in
-                    NavigationLink {
-                        
-                    } label: {
+                    NavigationLink(value:  WalletEnviroment.Route.info(wallet)) {
                         ListWalletRowUIView()
                             .environmentObject(wallet)
                     }
@@ -37,10 +35,18 @@ struct ListWalletUIView: View {
                     enviroment.goToCreateView()
                 }
             }
-            .navigationDestination(for: String.self) { view in
-                // TODO: Move to abstraction
-                if view == WalletEnviroment.Route.create.rawValue {
+            .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
+                switch view {
+                case .create:
                     CreateWalletUIView()
+                        .environmentObject(enviroment)
+                case .info(let wallet):
+                    InfoWalletUIView()
+                        .environmentObject(wallet)
+                        .environmentObject(enviroment)
+                case .edition(let wallet):
+                    EditWalletUIView()
+                        .environmentObject(wallet)
                         .environmentObject(enviroment)
                 }
             }

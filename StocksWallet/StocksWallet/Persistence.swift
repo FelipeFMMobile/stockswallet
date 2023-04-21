@@ -41,6 +41,10 @@ struct PersistenceController {
             newItem.isPrincipal = false
             if idx == 0 {
                 newItem.isPrincipal = true
+                newItem.information = "wallet information text"
+                newItem.originalAmount = 10.0
+                newItem.amount = 7.0
+                newItem.amountTarget = 10.0
                 walletPreview = newItem
             }
             newItem.type = "Simulation"
