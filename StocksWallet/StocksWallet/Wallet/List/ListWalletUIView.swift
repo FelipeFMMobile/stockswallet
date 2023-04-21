@@ -16,19 +16,24 @@ struct ListWalletUIView: View {
     var wallets: FetchedResults<Wallet>
     var body: some View {
         NavigationStack(path: $enviroment.path) {
-            List(wallets) { wallet in
-                NavigationLink {
-                    
-                } label: {
-                    ListWalletRowUIView()
-                        .environmentObject(wallet)
+            List {
+                ForEach(wallets) { wallet in
+                    NavigationLink {
+                        
+                    } label: {
+                        ListWalletRowUIView()
+                            .environmentObject(wallet)
+                    }
+                }
+                .onDelete { indexSet in
+                    enviroment.deleteItems(wallets, offsets: indexSet)
                 }
             }
-            .navigationTitle("Wallets")
+            .navigationTitle(str(Strings.title))
             .listStyle(.inset)
             .toolbar {
                 EditButton()
-                Button("Adicionar") {
+                Button(str(Strings.addAction)) {
                     enviroment.goToCreateView()
                 }
             }
@@ -40,9 +45,7 @@ struct ListWalletUIView: View {
                 }
             }
         }
-        
     }
-    
 }
 
 struct ListWalletUIView_Previews: PreviewProvider {

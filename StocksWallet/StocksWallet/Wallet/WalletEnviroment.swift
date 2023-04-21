@@ -19,13 +19,11 @@ class WalletEnviroment: ObservableObject {
         var amountTarget = 0
         var isPrincipal = false
         var selectedType = "Operation"
-    
         func isValid() -> Bool {
             return !name.isEmpty && !information.isEmpty && amountTarget > 0
         }
     }
 
-    @Published var items = [Wallet]()
     @Published var path = NavigationPath()
     let walletTypes = ["Simulation", "Operation"]
     
@@ -61,6 +59,7 @@ class WalletEnviroment: ObservableObject {
 
     // MARK: Operations
     
+    @discardableResult
     func createNewWattet(data: FormData, broker: Broker) -> Bool {
         let wallet = Wallet(context: context)
         wallet.name = data.name
@@ -76,8 +75,22 @@ class WalletEnviroment: ObservableObject {
             debugPrint("save \(wallet)")
             return true
         } catch {
-            let nsError = error as NSError
+            _ = error as NSError
             return false
+        }
+    }
+
+    @discardableResult
+    func deleteItems(_ wallets: FetchedResults<Wallet>, offsets: IndexSet) -> Bool{
+        withAnimation {
+            offsets.map { wallets[$0] }.forEach(context.delete)
+            do {
+                try context.save()
+                return true
+            } catch {
+                _ = error as NSError
+                return false
+            }
         }
     }
 }

@@ -64,17 +64,6 @@ struct PersistenceController {
         if inMemory {
             container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
         }
-//        // Broker
-//        let broker1 = Broker(context: self.container.viewContext)
-//        broker1.name = "Broker 1"
-//        broker1.accountAgency = "AG6790"
-//        broker1.accountNumber = "192009309"
-//        broker1.otherInfo = "main broker"
-//        let broker2 = Broker(context:  self.container.viewContext)
-//        broker2.name = "Broker 2"
-//        broker2.accountAgency = "AG5555"
-//        broker2.accountNumber = "890808098"
-//        broker2.otherInfo = "other broker"
         container.loadPersistentStores(completionHandler: { storeDescription, error in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

@@ -20,12 +20,11 @@ struct ListWalletRowUIView: View {
                         .font(.title2)
                         .lineLimit(2)
                     Spacer(minLength: 24)
-                    Text(wallet.amount!, formatter: WalletEnviroment.currencyFormatter)
+                    Text(wallet.amount ?? 0.0, formatter: WalletEnviroment.currencyFormatter)
                         .font(.title2)
                 }.padding(.bottom, 8)
                 HStack {
-                    // TODO: Move to generic strings
-                    Text("Original: \(wallet.amount!, formatter: WalletEnviroment.currencyFormatter)")
+                    Text("\(str(Strings.originalAmount))\(wallet.amount ?? 0.0, formatter: WalletEnviroment.currencyFormatter)")
                     Spacer()
                     Text("\(wallet.broker?.name ?? "")")
                 }
@@ -34,7 +33,6 @@ struct ListWalletRowUIView: View {
     }
 }
 
-// TODO: Move to a one file or folder cotaine all previews?
 struct ListWalletRowUIView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
@@ -45,5 +43,11 @@ struct ListWalletRowUIView_Previews: PreviewProvider {
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .environmentObject(PersistenceController.walletPreview)
         }.previewLayout(.fixed(width: 345, height: 90))
+    }
+}
+
+extension ListWalletRowUIView: StringsView {
+    enum Strings: String, RawRepresentable {
+        case originalAmount = "Original: "
     }
 }
