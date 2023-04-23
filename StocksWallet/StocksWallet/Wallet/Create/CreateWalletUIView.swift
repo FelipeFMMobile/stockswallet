@@ -34,8 +34,8 @@ struct CreateWalletUIView: View {
                     } else {
                         Picker(selection: $data.selectedBrokerIndex,
                                label: Text(str(Strings.Fields.broker))) {
-                            ForEach(brokers, id: \.self) {
-                                Text($0.name ?? "").tag($0.id?.hashValue ?? 0)
+                            ForEach(0..<brokers.count) {
+                                Text(brokers[$0].name ?? "")
                             }
                         }
                     }

@@ -31,11 +31,12 @@ struct EditWalletUIView: View {
                 Section(header: Text(str(Strings.Fields.broker))) {
                     Picker(selection: $data.selectedBrokerIndex,
                            label: Text(str(Strings.Fields.broker))) {
-                        ForEach(brokers, id: \.self) {
-                            Text($0.name ?? "").tag($0.id?.hashValue ?? 0)
+                        ForEach(0..<brokers.count) {
+                            Text(brokers[$0].name ?? "")
                         }
                     }.onAppear {
-                        data.selectedBrokerIndex = brokers.firstIndex(where: { $0.id == wallet.broker?.id }) ?? 0
+                        data.selectedBrokerIndex = brokers.firstIndex(where: { $0.objectID == wallet.broker?.objectID }) ?? 0
+                        debugPrint(data.selectedBrokerIndex)
                     }
                 }
                 
@@ -66,8 +67,9 @@ struct EditWalletUIView: View {
                     .Info(buttonTitle: str(Strings.buttonTitle),
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
-                              enviroment.updateWattet(data: data, wallet: wallet,
-                                                      broker: brokers[selectedBrokerIndex])
+                              enviroment.updateWattet(data: data,
+                                                      wallet: wallet,
+                                                      broker: brokers[data.selectedBrokerIndex])
                               enviroment.path.removeLast()
                           }
             )

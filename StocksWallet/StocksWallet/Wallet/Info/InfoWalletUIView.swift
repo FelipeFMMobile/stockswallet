@@ -15,14 +15,14 @@ struct InfoWalletUIView: View {
             Section
             {
                 VStack(alignment: .leading,
-                       spacing: 24.0) {
+                       spacing: 8.0) {
                     Text(wallet.name ?? "")
-                        .font(.title2)
+                        .font(.title)
                     Text(wallet.information ?? "")
                         .font(.body)
                         .lineLimit(0)
                 }
-                Spacer(minLength: 8)
+                .listRowSeparator(.visible)
                 HStack(spacing: 0.0) {
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.originalAmount))")
@@ -55,8 +55,9 @@ struct InfoWalletUIView: View {
                             .bold(wallet.peformanceIndicator() > 0)
                             .italic(wallet.peformanceIndicator() < 0)
                             .foregroundColor(wallet.peformanceIndicator() > 0 ? .green : .red)
-                            
+                        
                     }
+                    .opacity(wallet.hasOriginalAmount() ? 1 : 0)
                 }
                 HStack(spacing: 4.0) {
                     Text(str(Strings.totalStocks))
@@ -65,7 +66,6 @@ struct InfoWalletUIView: View {
                     Text("26 units")
                         .font(.title3)
                 }
-                Spacer(minLength: 12)
                 VStack(alignment: .leading,
                        spacing: 4.0) {
                     Text(wallet.broker?.name ?? "")
@@ -86,7 +86,7 @@ struct InfoWalletUIView: View {
                         VStack(alignment: .leading) {
                             Text("\(str(Strings.created)) \(wallet.timestamp ?? Date(), formatter: WalletEnviroment.updatedDateFormatter)")
                                 .font(.body)
-                         }
+                        }
                         Spacer()
                     }
                     Text("\(str(Strings.typeWallet)) \(wallet.type ?? "")")

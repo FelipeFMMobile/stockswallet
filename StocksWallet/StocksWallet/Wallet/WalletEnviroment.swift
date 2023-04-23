@@ -118,7 +118,7 @@ class WalletEnviroment: ObservableObject {
         wallet.type = data.selectedType
         wallet.broker = broker
         do {
-            try context.save()
+            try wallet.managedObjectContext?.save()
             debugPrint("save \(wallet)")
             return true
         } catch {

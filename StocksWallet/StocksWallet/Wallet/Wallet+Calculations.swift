@@ -32,4 +32,9 @@ extension Wallet {
         }
         return 0
     }
+
+    func hasOriginalAmount() -> Bool {
+        guard let originalAmount = originalAmount else { return false }
+        return !originalAmount.doubleValue.isZero
+    }
 }
