@@ -70,7 +70,7 @@ struct CreateWalletUIView: View {
                           alertMessage: str(Strings.alertDesc)) {
                               enviroment.createNewWattet(data: data,
                                                          broker: brokers[data.selectedBrokerIndex])
-                              enviroment.path.removeLast()
+                              enviroment.goBack()
                           }
             )
             .disabled(!data.isValid())

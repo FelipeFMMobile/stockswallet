@@ -7,14 +7,10 @@
 
 import SwiftUI
 
-struct CreateWalletUIView: View {
-    @EnvironmentObject var enviroment: WalletEnviroment
-    @State private var data = WalletEnviroment.FormData()
+struct CreateBrokerUIView: View {
+    @EnvironmentObject var enviroment: BrokerEnviroment
+    @State private var data = BrokerEnviroment.FormData()
     @State private var confirmationAlert = false
-    @FetchRequest(
-        sortDescriptors: WalletEnviroment.sortDescriptorBroker,
-        animation: .default)
-    var brokers: FetchedResults<Broker>
     var body: some View {
         VStack {
             Form {
@@ -22,44 +18,18 @@ struct CreateWalletUIView: View {
                     TextField(str(Strings.Fields.nameDesc), text: $data.name)
                 }
                 
-                Section(header: Text(str(Strings.Fields.information))) {
-                    TextField(str(Strings.Fields.informationDesc), text: $data.information)
+                Section(header: Text(str(Strings.Fields.other))) {
+                    TextField(str(Strings.Fields.informationDesc), text: $data.otherInfo)
                 }
 
-                Section(header: Text(str(Strings.Fields.broker))) {
-                    if brokers.isEmpty {
-                        NavigationLink(str(Strings.Fields.brokerCreate)) {
-                            Text(str(Strings.Fields.brokerInfo))
-                        }
-                    } else {
-                        Picker(selection: $data.selectedBrokerIndex,
-                               label: Text(str(Strings.Fields.broker))) {
-                            ForEach(0..<brokers.count) {
-                                Text(brokers[$0].name ?? "")
-                            }
-                        }
-                    }
+                Section(header: Text(str(Strings.Fields.agency))) {
+                    TextField(str(Strings.Fields.agencyDesc), text: $data.agency)
+                        .keyboardType(.numbersAndPunctuation)
                 }
 
-                Section(header: Text(str(Strings.Fields.amount))) {
-                    Stepper(value: $data.amountTarget,
-                            in: 0...100, step: 5) {
-                        Text("\(data.amountTarget) %")
-                    }
-                }
-
-                Section(header: Text(str(Strings.Fields.principal))) {
-                    Toggle(isOn: $data.isPrincipal) {
-                        Text(str(Strings.Fields.principalDesc))
-                    }
-                }
-
-                Section(header: Text(str(Strings.Fields.type))) {
-                    Picker(selection: $data.selectedType, label: Text(str(Strings.Fields.type))) {
-                        ForEach(enviroment.walletTypes, id: \.self) {
-                            Text($0).tag($0)
-                        }
-                    }
+                Section(header: Text(str(Strings.Fields.account))) {
+                    TextField(str(Strings.Fields.accountDesc), text: $data.account)
+                        .keyboardType(.numbersAndPunctuation)
                 }
             }
             ConfirmationButtonView(
@@ -68,9 +38,7 @@ struct CreateWalletUIView: View {
                     .Info(buttonTitle: str(Strings.buttonTitle),
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
-                              enviroment.createNewWattet(data: data,
-                                                         broker: brokers[data.selectedBrokerIndex])
-                              enviroment.path.removeLast()
+                              enviroment.createNewBroker(data: data)
                           }
             )
             .disabled(!data.isValid())
@@ -80,10 +48,10 @@ struct CreateWalletUIView: View {
     }
 }
 
-struct CreateWalletUIView_Previews: PreviewProvider {
+struct CreateBrokerUIView_Previews: PreviewProvider {
     static var previews: some View {
-        CreateWalletUIView()
+        CreateBrokerUIView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(WalletEnviroment())
+            .environmentObject(BrokerEnviroment())
     }
 }

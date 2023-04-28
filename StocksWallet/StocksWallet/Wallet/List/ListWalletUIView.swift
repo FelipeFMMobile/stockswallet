@@ -15,10 +15,10 @@ struct ListWalletUIView: View {
         animation: .default)
     var wallets: FetchedResults<Wallet>
     var body: some View {
-        NavigationStack(path: $enviroment.path) {
+        //NavigationStack(path: $enviroment.path) {
             List {
                 ForEach(wallets) { wallet in
-                    NavigationLink(value:  WalletEnviroment.Route.info(wallet)) {
+                    NavigationLink(value:  RoutePath(.wallet_creation)) {
                         ListWalletRowUIView()
                             .environmentObject(wallet)
                     }
@@ -35,22 +35,22 @@ struct ListWalletUIView: View {
                     enviroment.goToCreateView()
                 }
             }
-            .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
-                switch view {
-                case .create:
-                    CreateWalletUIView()
-                        .environmentObject(enviroment)
-                case .info(let wallet):
-                    InfoWalletUIView()
-                        .environmentObject(wallet)
-                        .environmentObject(enviroment)
-                case .edition(let wallet):
-                    EditWalletUIView()
-                        .environmentObject(wallet)
-                        .environmentObject(enviroment)
-                }
-            }
-        }
+//            .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
+//                switch view {
+//                case .create:
+//                    CreateWalletUIView()
+//                        .environmentObject(enviroment)
+//                case .info(let wallet):
+//                    InfoWalletUIView()
+//                        .environmentObject(wallet)
+//                        .environmentObject(enviroment)
+//                case .edition(let wallet):
+//                    EditWalletUIView()
+//                        .environmentObject(wallet)
+//                        .environmentObject(enviroment)
+//                }
+//            }
+//        }
     }
 }
 

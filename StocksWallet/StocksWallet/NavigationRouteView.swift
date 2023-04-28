@@ -23,20 +23,39 @@ struct RoutePath: Hashable {
     }
 }
 
-struct NavigationRouteView: View {
-    @State private var path = NavigationPath([RoutePath(.wallet_list)])
+class Enviroments: ObservableObject {
+    private var routeTo: ((RoutePath) -> Void)?
+    lazy var wallet: WalletEnviroment = WalletEnviroment(routeTo)
 
+    func route(_ route: @escaping ((RoutePath) -> Void)) -> Self {
+        self.routeTo = route
+        return self
+    }
+}
+
+struct NavigationRouteView: View {
+    private var enviroment = Enviroments()
+    //private var walletEnviroment: WalletEnviroment = WalletEnviroment(changeRoute)
+    @State private var path = NavigationPath()
+    var rootView: some View {
+         ListWalletUIView()
+        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+        .environmentObject(enviroment
+            .route(changeRoute).wallet)
+    }
     var body: some View {
         NavigationStack(path: $path) {
             HStack {
-                
+                rootView
             }
             .navigationDestination(for: RoutePath.self) { route in
                 switch route.route {
                 case .wallet_list:
-                    ListWalletUIView()
-                    .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                    .environmentObject(WalletEnviroment())
+                    rootView
+                case .wallet_creation:
+                    CreateWalletUIView()
+                        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                        .environmentObject(self.enviroment.wallet)
                 case .none:
                     Text("no route")
                 default:
@@ -44,6 +63,10 @@ struct NavigationRouteView: View {
                 }
             }
         }
+    }
+
+    func changeRoute(_ route: RoutePath) {
+        path.append(route)
     }
 }
 

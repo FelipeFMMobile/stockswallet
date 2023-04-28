@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// TODO: Move to file 
 protocol StringsView {
     func str(_ value: any RawRepresentable<String>) -> String
 }

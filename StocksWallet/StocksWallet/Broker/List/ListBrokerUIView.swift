@@ -44,21 +44,21 @@ struct ListBrokerUIView: View {
                 //enviroment.goToCreateView()
             }
         }
-        .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
-            switch view {
-            case .create:
-                CreateWalletUIView()
-                    .environmentObject(enviroment)
-            case .info(let wallet):
-                InfoWalletUIView()
-                    .environmentObject(wallet)
-                    .environmentObject(enviroment)
-            case .edition(let wallet):
-                EditWalletUIView()
-                    .environmentObject(wallet)
-                    .environmentObject(enviroment)
-            }
-        }
+//        .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
+//            switch view {
+//            case .create:
+//                CreateWalletUIView()
+//                    .environmentObject(enviroment)
+//            case .info(let wallet):
+//                InfoWalletUIView()
+//                    .environmentObject(wallet)
+//                    .environmentObject(enviroment)
+//            case .edition(let wallet):
+//                EditWalletUIView()
+//                    .environmentObject(wallet)
+//                    .environmentObject(enviroment)
+//            }
+//        }
     }
 }
 

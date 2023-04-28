@@ -70,7 +70,7 @@ struct EditWalletUIView: View {
                               enviroment.updateWattet(data: data,
                                                       wallet: wallet,
                                                       broker: brokers[data.selectedBrokerIndex])
-                              enviroment.path.removeLast()
+                              enviroment.goBack()
                           }
             )
             .disabled(!data.isValid())

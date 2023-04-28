@@ -16,10 +16,10 @@ struct StocksWalletApp: App {
 //            ContentView()
 //                .environment(\.managedObjectContext,
 //                              persistenceController.container.viewContext)
-            ListWalletUIView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(WalletEnviroment())
-           //NavigationRouteView()
+//            ListWalletUIView()
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                .environmentObject(WalletEnviroment())
+           NavigationRouteView()
         }
     }
 }

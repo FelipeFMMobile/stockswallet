@@ -32,6 +32,11 @@
 		BCBD34CE29F3270300FF87B5 /* Wallet+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34CD29F3270300FF87B5 /* Wallet+Calculations.swift */; };
 		BCBD34D129F33C9800FF87B5 /* EditWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34D029F33C9800FF87B5 /* EditWalletUIView.swift */; };
 		BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */; };
+		BCF6EA8729F744C20048E652 /* BrokerEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8629F744C20048E652 /* BrokerEnviroment.swift */; };
+		BCF6EA8929F746950048E652 /* ListBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8829F746950048E652 /* ListBrokerUIView.swift */; };
+		BCF6EA8B29F747260048E652 /* ListBrokerUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */; };
+		BCF6EA8D29F748DA0048E652 /* CreateBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */; };
+		BCF6EA9129F749310048E652 /* CreateBrokerUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		BCBD34CD29F3270300FF87B5 /* Wallet+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+Calculations.swift"; sourceTree = "<group>"; };
 		BCBD34D029F33C9800FF87B5 /* EditWalletUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWalletUIView.swift; sourceTree = "<group>"; };
 		BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditWalletUIView+Strings.swift"; sourceTree = "<group>"; };
+		BCF6EA8629F744C20048E652 /* BrokerEnviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrokerEnviroment.swift; path = StocksWallet/BrokerEnviroment.swift; sourceTree = SOURCE_ROOT; };
+		BCF6EA8829F746950048E652 /* ListBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListBrokerUIView.swift; path = StocksWallet/Broker/List/ListBrokerUIView.swift; sourceTree = SOURCE_ROOT; };
+		BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBrokerUIView+Strings.swift"; sourceTree = "<group>"; };
+		BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBrokerUIView.swift; sourceTree = "<group>"; };
+		BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateBrokerUIView+Strings.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				BCA224E729F20581007CF4E4 /* NavigationRouteView.swift */,
+				BCF6EA8529F744920048E652 /* Broker */,
 				BC0DC4E829E621110031BC30 /* Wallet */,
 				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
 				BCA92AA029D48659003FBA45 /* Persistence.swift */,
@@ -236,6 +247,34 @@
 				BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */,
 			);
 			path = Edition;
+			sourceTree = "<group>";
+		};
+		BCF6EA8529F744920048E652 /* Broker */ = {
+			isa = PBXGroup;
+			children = (
+				BCF6EA8629F744C20048E652 /* BrokerEnviroment.swift */,
+				BCF6EA8F29F748F70048E652 /* Create */,
+				BCF6EA8E29F748E50048E652 /* List */,
+			);
+			path = Broker;
+			sourceTree = "<group>";
+		};
+		BCF6EA8E29F748E50048E652 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				BCF6EA8829F746950048E652 /* ListBrokerUIView.swift */,
+				BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		BCF6EA8F29F748F70048E652 /* Create */ = {
+			isa = PBXGroup;
+			children = (
+				BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */,
+				BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */,
+			);
+			path = Create;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,7 +438,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF6EA8B29F747260048E652 /* ListBrokerUIView+Strings.swift in Sources */,
 				BCBD34CC29F31EEF00FF87B5 /* InfoWalletUIView+Strings.swift in Sources */,
+				BCF6EA9129F749310048E652 /* CreateBrokerUIView+Strings.swift in Sources */,
+				BCF6EA8729F744C20048E652 /* BrokerEnviroment.swift in Sources */,
 				BC8AB7C729EF6CF800919332 /* CreateWalletUIView+Strings.swift in Sources */,
 				BCBD34CA29F31E8B00FF87B5 /* InfoWalletUIView.swift in Sources */,
 				BCA224E829F20581007CF4E4 /* NavigationRouteView.swift in Sources */,
@@ -408,6 +450,7 @@
 				BC95B57E29ECA5C7009D3035 /* CreateWalletUIView.swift in Sources */,
 				BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */,
 				BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */,
+				BCF6EA8929F746950048E652 /* ListBrokerUIView.swift in Sources */,
 				BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */,
 				BCBD34D129F33C9800FF87B5 /* EditWalletUIView.swift in Sources */,
 				BCA92AA629D48659003FBA45 /* ContentView.swift in Sources */,
@@ -415,6 +458,7 @@
 				BC0DC4EE29E629C70031BC30 /* WalletEnviroment.swift in Sources */,
 				BC0DC4EC29E621C40031BC30 /* ListWalletUIView.swift in Sources */,
 				BCBD34CE29F3270300FF87B5 /* Wallet+Calculations.swift in Sources */,
+				BCF6EA8D29F748DA0048E652 /* CreateBrokerUIView.swift in Sources */,
 				BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
