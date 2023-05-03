@@ -11,6 +11,8 @@
 		BC0DC4EC29E621C40031BC30 /* ListWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC4EB29E621C40031BC30 /* ListWalletUIView.swift */; };
 		BC0DC4EE29E629C70031BC30 /* WalletEnviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC0DC4ED29E629C70031BC30 /* WalletEnviroment.swift */; };
 		BC23CDE229DB48D600E276A5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = BC23CDE129DB48D600E276A5 /* README.md */; };
+		BC4B2E072A01E1A40040AC2D /* Enviroments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B2E062A01E1A40040AC2D /* Enviroments.swift */; };
+		BC4B2E092A01E1D30040AC2D /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B2E082A01E1D30040AC2D /* Routes.swift */; };
 		BC8AB7C529EF5E6A00919332 /* ConfirmationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */; };
 		BC8AB7C729EF6CF800919332 /* CreateWalletUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C629EF6CF800919332 /* CreateWalletUIView+Strings.swift */; };
 		BC95B57E29ECA5C7009D3035 /* CreateWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */; };
@@ -61,6 +63,8 @@
 		BC0DC4EB29E621C40031BC30 /* ListWalletUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListWalletUIView.swift; sourceTree = "<group>"; };
 		BC0DC4ED29E629C70031BC30 /* WalletEnviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletEnviroment.swift; sourceTree = "<group>"; };
 		BC23CDE129DB48D600E276A5 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		BC4B2E062A01E1A40040AC2D /* Enviroments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroments.swift; sourceTree = "<group>"; };
+		BC4B2E082A01E1D30040AC2D /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
 		BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationButtonView.swift; sourceTree = "<group>"; };
 		BC8AB7C629EF6CF800919332 /* CreateWalletUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateWalletUIView+Strings.swift"; sourceTree = "<group>"; };
 		BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletUIView.swift; sourceTree = "<group>"; };
@@ -151,6 +155,16 @@
 			path = List;
 			sourceTree = "<group>";
 		};
+		BC4B2E0A2A01E1F00040AC2D /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				BC4B2E062A01E1A40040AC2D /* Enviroments.swift */,
+				BC4B2E082A01E1D30040AC2D /* Routes.swift */,
+				BCA224E729F20581007CF4E4 /* NavigationRouteView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		BC8AB7C329EF5E3F00919332 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -184,7 +198,7 @@
 		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
 			isa = PBXGroup;
 			children = (
-				BCA224E729F20581007CF4E4 /* NavigationRouteView.swift */,
+				BC4B2E0A2A01E1F00040AC2D /* Navigation */,
 				BCF6EA8529F744920048E652 /* Broker */,
 				BC0DC4E829E621110031BC30 /* Wallet */,
 				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
@@ -439,6 +453,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCF6EA8B29F747260048E652 /* ListBrokerUIView+Strings.swift in Sources */,
+				BC4B2E092A01E1D30040AC2D /* Routes.swift in Sources */,
+				BC4B2E072A01E1A40040AC2D /* Enviroments.swift in Sources */,
 				BCBD34CC29F31EEF00FF87B5 /* InfoWalletUIView+Strings.swift in Sources */,
 				BCF6EA9129F749310048E652 /* CreateBrokerUIView+Strings.swift in Sources */,
 				BCF6EA8729F744C20048E652 /* BrokerEnviroment.swift in Sources */,

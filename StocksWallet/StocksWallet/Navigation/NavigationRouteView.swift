@@ -8,61 +8,6 @@
 import SwiftUI
 import CoreData
 
-enum Routes: Equatable {
-    case wallet_list, wallet_creation, wallet_info(Wallet), wallet_edit(Wallet)
-    case none
-
-    var name: String {
-        switch self {
-        case.wallet_creation:
-            return "wallet_creation"
-        case .wallet_list:
-            return "wallet_list"
-        case .wallet_info:
-            return "wallet_info"
-        case .wallet_edit:
-            return "wallet_edit"
-        case .none:
-            return "none"
-        }
-    }
-
-    static func ==(lhs: Routes, rhs: Routes) -> Bool {
-        lhs.name == rhs.name
-    }
-}
-
-struct RoutePath: Hashable {
-    var route: Routes = .none
-    var hashValue = { UUID().uuid }
-    init(_ route: Routes) {
-        self.route = route
-    }
-
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(hashValue)
-    }
-
-    static func == (lhs: RoutePath, rhs: RoutePath) -> Bool {
-        lhs.route == rhs.route
-    }
-}
-
-class Enviroments: ObservableObject {
-    private var routeTo: RouteOperation?
-    lazy var wallet: WalletEnviroment = WalletEnviroment(routeTo)
-
-    struct RouteOperation {
-        var changeRoute: ((RoutePath) -> Void)
-        var backRoute: (() -> Void)
-    }
-
-    func route(_ route: RouteOperation) -> Self {
-        self.routeTo = route
-        return self
-    }
-}
-
 struct NavigationRouteView: View {
     private var enviroment = Enviroments()
     @State private var path = NavigationPath()
@@ -98,6 +43,15 @@ struct NavigationRouteView: View {
                        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
                        .environmentObject(wallet)
                        .environmentObject(enviroment.wallet)
+                case .broker_list:
+                    ListBrokerUIView()
+                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                       .environmentObject(enviroment.broker)
+                case .broker_creation:
+                    CreateBrokerUIView()
+                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                       .environmentObject(enviroment.broker)
+
                 case .none:
                     Text("no route")
                 }

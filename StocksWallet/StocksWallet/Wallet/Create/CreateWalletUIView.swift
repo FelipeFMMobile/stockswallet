@@ -28,7 +28,7 @@ struct CreateWalletUIView: View {
 
                 Section(header: Text(str(Strings.Fields.broker))) {
                     if brokers.isEmpty {
-                        NavigationLink(str(Strings.Fields.brokerCreate)) {
+                        NavigationLink(value:  RoutePath(.broker_creation)) {
                             Text(str(Strings.Fields.brokerInfo))
                         }
                     } else {

@@ -41,24 +41,9 @@ struct ListBrokerUIView: View {
         .toolbar {
             EditButton()
             Button(str(Strings.addAction)) {
-                //enviroment.goToCreateView()
+                enviroment.gottoCreateBrokerView()
             }
         }
-//        .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
-//            switch view {
-//            case .create:
-//                CreateWalletUIView()
-//                    .environmentObject(enviroment)
-//            case .info(let wallet):
-//                InfoWalletUIView()
-//                    .environmentObject(wallet)
-//                    .environmentObject(enviroment)
-//            case .edition(let wallet):
-//                EditWalletUIView()
-//                    .environmentObject(wallet)
-//                    .environmentObject(enviroment)
-//            }
-//        }
     }
 }
 

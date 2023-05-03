@@ -87,6 +87,14 @@ class WalletEnviroment: ObservableObject {
         router?.backRoute()
     }
 
+    func goToBrokerCreationView() {
+        router?.changeRoute(RoutePath(.broker_creation))
+    }
+
+    func goToBrokerListView() {
+        router?.changeRoute(RoutePath(.broker_list))
+    }
+
     // MARK: Operations
     
     @discardableResult

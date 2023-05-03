@@ -39,6 +39,7 @@ struct CreateBrokerUIView: View {
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
                               enviroment.createNewBroker(data: data)
+                              enviroment.goBack()
                           }
             )
             .disabled(!data.isValid())

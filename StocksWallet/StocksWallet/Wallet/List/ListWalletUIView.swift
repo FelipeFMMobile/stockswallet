@@ -30,26 +30,15 @@ struct ListWalletUIView: View {
             .listStyle(.inset)
             .toolbar {
                 EditButton()
-                Button(str(Strings.addAction)) {
-                    enviroment.goToCreateView()
-                }
+                Menu(content: {
+                    Button(str(Strings.addAction)) {
+                        enviroment.goToCreateView()
+                    }
+                    Button(str(Strings.brokersAction)) {
+                        enviroment.goToBrokerListView()
+                    }
+                }, label: {Text(str(Strings.optionsMenu))})
             }
-//            .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
-//                switch view {
-//                case .create:
-//                    CreateWalletUIView()
-//                        .environmentObject(enviroment)
-//                case .info(let wallet):
-//                    InfoWalletUIView()
-//                        .environmentObject(wallet)
-//                        .environmentObject(enviroment)
-//                case .edition(let wallet):
-//                    EditWalletUIView()
-//                        .environmentObject(wallet)
-//                        .environmentObject(enviroment)
-//                }
-//            }
-//        }
     }
 }
 

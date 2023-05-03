@@ -7,7 +7,9 @@
 
 extension ListWalletUIView: StringsView {
     enum Strings: String, RawRepresentable {
+        case optionsMenu = "Options"
         case addAction = "New Wallet"
+        case brokersAction = "Brokers"
         case title = "Wallet"
     }
 }
