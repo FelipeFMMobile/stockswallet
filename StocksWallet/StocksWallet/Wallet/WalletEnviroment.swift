@@ -10,7 +10,7 @@ import CoreData
 
 // TODO: Could be Data Enviroment or other thing 
 class WalletEnviroment: ObservableObject {
-    private var routeTo: ((RoutePath) -> Void)?
+    private var router: Enviroments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
 
     struct FormData {
@@ -33,15 +33,9 @@ class WalletEnviroment: ObservableObject {
         }
     }
     let walletTypes = ["Simulation", "Operation"]
-//
-//    enum Route: Hashable {
-//        case create
-//        case info(Wallet)
-//        case edition(Wallet)
-//    }
 
-    init(_ route: ((RoutePath) -> Void)? = nil) {
-        self.routeTo = route
+    init(_ route: Enviroments.RouteOperation? = nil) {
+        self.router = route
     }
     
     // MARK: SortedDescriptors
@@ -82,16 +76,15 @@ class WalletEnviroment: ObservableObject {
 
     // MARK: Navigation
     func goToCreateView() {
-        routeTo?(RoutePath(.wallet_creation))
-        //self.path.append(RoutePath(.wallet_creation))
+        router?.changeRoute(RoutePath(.wallet_creation))
     }
 
     func goToEditView(_ wallet: Wallet) {
-        //self.path.append(RoutePath(.wallet_creation))
+        router?.changeRoute(RoutePath(.wallet_edit(wallet)))
     }
 
     func goBack() {
-        //self.path.removeLast()
+        router?.backRoute()
     }
 
     // MARK: Operations

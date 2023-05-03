@@ -15,10 +15,9 @@ struct ListWalletUIView: View {
         animation: .default)
     var wallets: FetchedResults<Wallet>
     var body: some View {
-        //NavigationStack(path: $enviroment.path) {
             List {
                 ForEach(wallets) { wallet in
-                    NavigationLink(value:  RoutePath(.wallet_creation)) {
+                    NavigationLink(value:  RoutePath(.wallet_info(wallet))) {
                         ListWalletRowUIView()
                             .environmentObject(wallet)
                     }
