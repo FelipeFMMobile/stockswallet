@@ -7,10 +7,11 @@
 
 import Foundation
 
-class Enviroments: ObservableObject {
+class Environments: ObservableObject {
     private var routeTo: RouteOperation?
-    lazy var wallet: WalletEnviroment = WalletEnviroment(routeTo)
-    lazy var broker: BrokerEnviroment = BrokerEnviroment(routeTo)
+    lazy var wallet: WalletEnvironment = WalletEnvironment(routeTo)
+    lazy var broker: BrokerEnvironment = BrokerEnvironment(routeTo)
+    lazy var walletShare: WalletShareEnvironment = WalletShareEnvironment(routeTo)
 
     struct RouteOperation {
         var changeRoute: ((RoutePath) -> Void)

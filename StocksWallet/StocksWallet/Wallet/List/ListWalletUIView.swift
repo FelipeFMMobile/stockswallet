@@ -9,9 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ListWalletUIView: View {
-    @EnvironmentObject var enviroment: WalletEnviroment
+    @EnvironmentObject var enviroment: WalletEnvironment
     @FetchRequest(
-        sortDescriptors: WalletEnviroment.sortDescriptorList,
+        sortDescriptors: WalletEnvironment.sortDescriptorList,
         animation: .default)
     var wallets: FetchedResults<Wallet>
     var body: some View {
@@ -46,6 +46,6 @@ struct ListWalletUIView_Previews: PreviewProvider {
     static var previews: some View {
         ListWalletUIView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(WalletEnviroment())
+            .environmentObject(WalletEnvironment())
     }
 }

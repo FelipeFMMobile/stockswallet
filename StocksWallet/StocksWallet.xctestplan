@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "FFF680EB-CDEE-4311-8647-CF5E114F053C",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:StocksWallet.xcodeproj",
+      "identifier" : "BCA92A9A29D48659003FBA45",
+      "name" : "StocksWallet"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:StocksWallet.xcodeproj",
+        "identifier" : "BCA92AB029D4865A003FBA45",
+        "name" : "StocksWalletTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:StocksWallet.xcodeproj",
+        "identifier" : "BCA92ABA29D4865A003FBA45",
+        "name" : "StocksWalletUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

@@ -8,8 +8,8 @@
 import SwiftUI
 import CoreData
 
-class BrokerEnviroment: ObservableObject {
-    private var router: Enviroments.RouteOperation?
+class BrokerEnvironment: ObservableObject {
+    private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
 
     struct FormData {
@@ -29,7 +29,7 @@ class BrokerEnviroment: ObservableObject {
         NSSortDescriptor(keyPath: \Broker.name, ascending: true)
     ]
 
-    init(_ route: Enviroments.RouteOperation? = nil) {
+    init(_ route: Environments.RouteOperation? = nil) {
         self.router = route
     }
     // MARK: Operations
@@ -39,7 +39,7 @@ class BrokerEnviroment: ObservableObject {
         let broker = Broker(context: context)
         broker.name = data.name
         broker.otherInfo = data.otherInfo
-        broker.id = UUID()
+        broker.identifier = UUID()
         broker.accountAgency = data.agency
         broker.accountNumber = data.account
         do {

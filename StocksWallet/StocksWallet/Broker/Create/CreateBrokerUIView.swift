@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct CreateBrokerUIView: View {
-    @EnvironmentObject var enviroment: BrokerEnviroment
-    @State private var data = BrokerEnviroment.FormData()
+    @EnvironmentObject var enviroment: BrokerEnvironment
+    @State private var data = BrokerEnvironment.FormData()
     @State private var confirmationAlert = false
     var body: some View {
         VStack {
@@ -53,6 +53,6 @@ struct CreateBrokerUIView_Previews: PreviewProvider {
     static var previews: some View {
         CreateBrokerUIView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(BrokerEnviroment())
+            .environmentObject(BrokerEnvironment())
     }
 }

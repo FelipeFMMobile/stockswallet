@@ -9,8 +9,8 @@ import SwiftUI
 import CoreData
 
 // TODO: Could be Data Enviroment or other thing 
-class WalletEnviroment: ObservableObject {
-    private var router: Enviroments.RouteOperation?
+class WalletEnvironment: ObservableObject {
+    private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
 
     struct FormData {
@@ -34,7 +34,7 @@ class WalletEnviroment: ObservableObject {
     }
     let walletTypes = ["Simulation", "Operation"]
 
-    init(_ route: Enviroments.RouteOperation? = nil) {
+    init(_ route: Environments.RouteOperation? = nil) {
         self.router = route
     }
     
@@ -53,6 +53,13 @@ class WalletEnviroment: ObservableObject {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
+        return formatter
+    }()
+
+    static var shortDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
         return formatter
     }()
 
@@ -81,6 +88,10 @@ class WalletEnviroment: ObservableObject {
 
     func goToEditView(_ wallet: Wallet) {
         router?.changeRoute(RoutePath(.wallet_edit(wallet)))
+    }
+
+    func goAddShareView(_ wallet: Wallet) {
+        router?.changeRoute(RoutePath(.wallet_stock_add(wallet)))
     }
 
     func goBack() {

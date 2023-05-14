@@ -11,6 +11,8 @@ import CoreData
 enum Routes: Equatable {
     case wallet_list, wallet_creation, wallet_info(Wallet), wallet_edit(Wallet)
     case broker_list, broker_creation
+    case wallet_stock_add(Wallet)
+    case error_screen(Error)
     case none
 
     var name: String {
@@ -27,7 +29,10 @@ enum Routes: Equatable {
             return "broker_list"
         case .broker_creation:
             return "broker_creation"
-
+        case .wallet_stock_add:
+            return "wallet_stock_add"
+        case .error_screen:
+            return "error_screen"
         case .none:
             return "none"
         }

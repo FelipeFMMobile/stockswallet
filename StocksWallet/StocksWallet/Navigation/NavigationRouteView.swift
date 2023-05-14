@@ -9,14 +9,14 @@ import SwiftUI
 import CoreData
 
 struct NavigationRouteView: View {
-    private var enviroment = Enviroments()
+    private var enviroment = Environments()
     @State private var path = NavigationPath()
     var rootView: some View {
          ListWalletUIView()
         .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         .environmentObject(enviroment
             .route(
-                Enviroments.RouteOperation(changeRoute: changeRoute,
+                Environments.RouteOperation(changeRoute: changeRoute,
                                            backRoute: backRoute)
             ).wallet)
     }
@@ -51,7 +51,13 @@ struct NavigationRouteView: View {
                     CreateBrokerUIView()
                        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
                        .environmentObject(enviroment.broker)
-
+                case .wallet_stock_add(let wallet):
+                    WalletShareAddUIView()
+                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
+                       .environmentObject(wallet)
+                       .environmentObject(enviroment.walletShare)
+                case .error_screen(let error):
+                    GenericErrorUIView(apiError: error)
                 case .none:
                     Text("no route")
                 }

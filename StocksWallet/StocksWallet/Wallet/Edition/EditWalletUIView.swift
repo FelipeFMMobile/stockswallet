@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct EditWalletUIView: View {
-    @EnvironmentObject var enviroment: WalletEnviroment
+    @EnvironmentObject var enviroment: WalletEnvironment
     @EnvironmentObject var wallet: Wallet
-    @State private var data = WalletEnviroment.FormData()
+    @State private var data = WalletEnvironment.FormData()
     @State private var confirmationAlert = false
     @State private var selectedBrokerIndex = 0
     @FetchRequest(
-        sortDescriptors: WalletEnviroment.sortDescriptorBroker,
+        sortDescriptors: WalletEnvironment.sortDescriptorBroker,
         animation: .default)
     var brokers: FetchedResults<Broker>
     var body: some View {
@@ -88,6 +88,6 @@ struct EditWalletUIView_Previews: PreviewProvider {
         EditWalletUIView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
             .environmentObject(PersistenceController.walletPreview)
-            .environmentObject(WalletEnviroment())
+            .environmentObject(WalletEnvironment())
     }
 }

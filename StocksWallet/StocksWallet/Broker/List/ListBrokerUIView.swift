@@ -9,9 +9,9 @@ import SwiftUI
 import CoreData
 
 struct ListBrokerUIView: View {
-    @EnvironmentObject var enviroment: BrokerEnviroment
+    @EnvironmentObject var enviroment: BrokerEnvironment
     @FetchRequest(
-        sortDescriptors: BrokerEnviroment.sortDescriptorBroker,
+        sortDescriptors: BrokerEnvironment.sortDescriptorBroker,
         animation: .default)
     var brokers: FetchedResults<Broker>
     var body: some View {
@@ -52,7 +52,7 @@ struct ListBrokerUIView_Previews: PreviewProvider {
         NavigationStack {
             ListBrokerUIView()
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-                .environmentObject(BrokerEnviroment())
+                .environmentObject(BrokerEnvironment())
         }
     }
 }
