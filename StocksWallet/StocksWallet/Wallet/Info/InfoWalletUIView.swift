@@ -60,11 +60,10 @@ struct InfoWalletUIView: View {
                     .opacity(wallet.hasOriginalAmount() ? 1 : 0)
                 }
                 HStack(spacing: 4.0) {
-                    Text(str(Strings.totalStocks))
-                        .font(.title3)
-                    Spacer()
-                    Text("26 units")
-                        .font(.title3)
+                    VStack(alignment: .leading) {
+                        Text(str(Strings.totalStocks))
+                        Text("\(wallet.walletShares?.count ?? 0)")
+                    }
                 }
                 VStack(alignment: .leading,
                        spacing: 4.0) {
@@ -105,16 +104,22 @@ struct InfoWalletUIView: View {
                 ForEach(Array(wallet.walletShares as? Set<WalletShare> ?? []), id: \.self) { shares in
                     InfoWalletShareRowUIView()
                         .environmentObject(shares)
+                }.onDelete { indexSet in
+                    enviroment.deleteWalletShares(Array(wallet.walletShares as? Set<WalletShare> ?? []), offsets: indexSet)
                 }
             }
         }
         .toolbar {
-            Button(str(Strings.editionButton)) {
-                enviroment.goToEditView(wallet)
-            }
-            Button(str(Strings.addStockButton)) {
-                enviroment.goAddShareView(wallet)
-            }
+            EditButton()
+            Menu(content: {
+                Button(str(Strings.editionButton)) {
+                    enviroment.goToEditView(wallet)
+                }
+                Button(str(Strings.addStockButton)) {
+                    enviroment.goAddShareView(wallet)
+                }
+            }, label: {Text(str(Strings.optionsMenu))})
+            
         }
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)

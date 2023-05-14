@@ -20,5 +20,6 @@ extension InfoWalletUIView: StringsView {
         case editionButton = "Edit this wallet"
         case addStockButton = "Add Stocks"
         case shareSection = "Shares"
+        case optionsMenu = "Options"
     }
 }

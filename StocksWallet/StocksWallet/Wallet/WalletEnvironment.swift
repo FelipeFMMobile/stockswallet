@@ -160,4 +160,18 @@ class WalletEnvironment: ObservableObject {
             }
         }
     }
+
+    @discardableResult
+    func deleteWalletShares(_ wallets: [WalletShare], offsets: IndexSet) -> Bool{
+        withAnimation {
+            offsets.map { wallets[$0] }.forEach(context.delete)
+            do {
+                try context.save()
+                return true
+            } catch {
+                _ = error as NSError
+                return false
+            }
+        }
+    }
 }
