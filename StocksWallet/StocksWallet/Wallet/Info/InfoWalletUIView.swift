@@ -12,8 +12,7 @@ struct InfoWalletUIView: View {
     @EnvironmentObject var enviroment: WalletEnvironment
     var body: some View {
         List {
-            Section
-            {
+            Section {
                 VStack(alignment: .leading,
                        spacing: 8.0) {
                     Text(wallet.name ?? "")
@@ -27,14 +26,14 @@ struct InfoWalletUIView: View {
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.originalAmount))")
                             .font(.caption)
-                        Text("\(wallet.originalAmount ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                        Text("\(wallet.originalAmount().toString(WalletEnvironment.currencyFormatter))")
                             .font(.title2)
                     }
                     Spacer()
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.currentAmount))")
                             .font(.caption)
-                        Text("\(wallet.amount ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                        Text("\(wallet.currentAmount().toString(WalletEnvironment.currencyFormatter))")
                             .font(.title2)
                             .bold()
                     }
@@ -101,16 +100,23 @@ struct InfoWalletUIView: View {
             }
             .listRowSeparator(.hidden)
             Section(str(Strings.shareSection)) {
-                ForEach(Array(wallet.walletShares as? Set<WalletShare> ?? []), id: \.self) { shares in
-                    InfoWalletShareRowUIView()
-                        .environmentObject(shares)
-                }.onDelete { indexSet in
-                    enviroment.deleteWalletShares(Array(wallet.walletShares as? Set<WalletShare> ?? []), offsets: indexSet)
+                if wallet.getShares().count > 0 {
+                    ForEach(wallet.getShares(), id: \.self) { shares in
+                        InfoWalletShareRowUIView()
+                            .environmentObject(shares)
+                    }.onDelete { indexSet in
+                        enviroment.deleteWalletShares(wallet.getShares(),
+                                                      offsets: indexSet)
+                    }
+                } else {
+                    NavigationLink(str(Strings.addStockButton),
+                                   value: RoutePath(.wallet_stock_add(wallet)))
                 }
             }
         }
         .toolbar {
             EditButton()
+                .opacity(wallet.getShares().count > 0 ? 1.0 : 0.0)
             Menu(content: {
                 Button(str(Strings.editionButton)) {
                     enviroment.goToEditView(wallet)

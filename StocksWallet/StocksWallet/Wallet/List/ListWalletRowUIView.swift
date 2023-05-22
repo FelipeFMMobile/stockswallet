@@ -20,11 +20,11 @@ struct ListWalletRowUIView: View {
                         .font(.title2)
                         .lineLimit(2)
                     Spacer(minLength: 24)
-                    Text(wallet.amount ?? 0.0, formatter: WalletEnvironment.currencyFormatter)
+                    Text(wallet.currentAmount().toString(WalletEnvironment.currencyFormatter))
                         .font(.title2)
                 }.padding(.bottom, 8)
                 HStack {
-                    Text("\(str(Strings.originalAmount))\(wallet.amount ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                    Text("\(str(Strings.originalAmount))\(wallet.originalAmount().toString(WalletEnvironment.currencyFormatter))")
                     Spacer()
                     Text("\(wallet.broker?.name ?? "")")
                 }

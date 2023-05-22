@@ -38,14 +38,12 @@
         <relationship name="walletShare" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WalletShare" inverseName="transactions" inverseEntity="WalletShare"/>
     </entity>
     <entity name="Wallet" representedClassName="Wallet" parentEntity="Object" syncable="YES" codeGenerationType="class">
-        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="amountTarget" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="firstOperationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="isPrincipal" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
-        <attribute name="originalAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="broker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Broker" inverseName="wallets" inverseEntity="Broker"/>
         <relationship name="walletShares" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalletShare" inverseName="wallet" inverseEntity="WalletShare"/>
@@ -64,7 +62,7 @@
         <attribute name="notes" optional="YES" attributeType="String"/>
         <attribute name="opened" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="peformance" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="peformanceValue" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="peformanceValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="releaseEarnings" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="releaseEarningsRate" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>

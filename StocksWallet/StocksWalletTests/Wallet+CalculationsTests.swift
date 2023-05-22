@@ -36,8 +36,8 @@ final class Wallet_CalculationsTests: XCTestCase {
         // When
         wallet?.updateCalculations()
         // Then
-        XCTAssertEqual(wallet?.amount, 2_649)
-        XCTAssertEqual(wallet?.originalAmount, 2_470)
+        XCTAssertEqual(wallet?.currentAmount(), 2_649)
+        XCTAssertEqual(wallet?.originalAmount(), 2_470)
         XCTAssertEqual(String(format: "%.2f", wallet?.getPeformance()?.doubleValue ?? 0.0), "7.25")
         XCTAssertEqual(String(format: "%.2f", wallet?.getPeformanceValue() ?? 0.0), "179.00")
     }
@@ -102,8 +102,6 @@ final class Wallet_CalculationsTests: XCTestCase {
         wallet.name = "Wallet n:\(wallet.identifier?.uuidString ?? "")"
         wallet.isPrincipal = true
         wallet.information = "wallet information text"
-        wallet.originalAmount = 0.0
-        wallet.amount = 0.0
         wallet.amountTarget = 10.0
         wallet.type = "Simulation"
         let transaction = createTransaction(type: "Buy", price: 10.0, amount: 100)
@@ -128,8 +126,6 @@ final class Wallet_CalculationsTests: XCTestCase {
         wallet.name = "Wallet n:\(wallet.identifier?.uuidString ?? "")"
         wallet.isPrincipal = true
         wallet.information = "wallet information text"
-        wallet.originalAmount = 0.0
-        wallet.amount = 0.0
         wallet.amountTarget = 10.0
         wallet.type = "Simulation"
         let transaction = createTransaction(type: "Buy", price: 10.0, amount: 100)
@@ -154,8 +150,6 @@ final class Wallet_CalculationsTests: XCTestCase {
         wallet.name = "Wallet n:\(wallet.identifier?.uuidString ?? "")"
         wallet.isPrincipal = true
         wallet.information = "wallet information text"
-        wallet.originalAmount = 0.0
-        wallet.amount = 0.0
         wallet.amountTarget = 10.0
         wallet.type = "Simulation"
         return wallet

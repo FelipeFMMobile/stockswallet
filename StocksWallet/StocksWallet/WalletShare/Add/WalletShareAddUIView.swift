@@ -103,7 +103,7 @@ struct WalletShareAddUIView: View {
                         Spacer(minLength: 20.0)
                         Stepper(value: $data.stopPercentage,
                                 in: 0...100, step: 5) {
-                            Text("\(data.stopPercentage) %")
+                            Text("\(NSNumber(value:data.stopPercentage), formatter: WalletEnvironment.decimalFormatter) %")
                         }
                     }
                     HStack {
@@ -111,7 +111,9 @@ struct WalletShareAddUIView: View {
                             .font(.caption)
                             .multilineTextAlignment(.leading)
                         Spacer(minLength: 20.0)
-                        TextField(str(Strings.Stop.notes), text: $data.notes)
+                        TextField(str(Strings.Stop.notes), text: $data.notes,
+                                  axis: .vertical)
+                            .lineLimit(2, reservesSpace: true)
                     }
                 }
                 
@@ -122,8 +124,7 @@ struct WalletShareAddUIView: View {
                     .Info(buttonTitle: str(Strings.buttonTitle),
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
-                              environment.createWalletTransaction(data: data, wallet: wallet, 
-                                                                  share: environment.share)
+                              environment.createWalletTransaction(data: data, wallet: wallet, share: environment.share)
                               environment.goBack()
                           }
             )

@@ -17,21 +17,22 @@ extension WalletShare {
         guard let transactions = transactions?.allObjects as? [Transaction] else {
             return []
         }
-        return transactions.filter { $0.type == "Buy" }
+        return transactions.filter { $0.type == WalletTransactionType.buy.rawValue }
     }
 
     func sellTransactions() -> [Transaction] {
         guard let transactions = transactions?.allObjects as? [Transaction] else {
             return []
         }
-        return transactions.filter { $0.type == "Sell" }
+        return transactions.filter { $0.type == WalletTransactionType.sell.rawValue }
     }
 
     // MARK: Calculations
     private func calculationForTransaction(_ transaction: Transaction) {
-        switch transaction.type {
+        let type = WalletTransactionType(rawValue: transaction.type ?? "") ?? .unknown
+        switch type {
         // TODO: Fix types into static enum
-        case "Buy":
+        case .buy:
             amount = (amount ?? 0).adding(NSDecimalNumber(value: transaction.amount))
             if lastBuyDate == nil && !opened {
                 buyFirstPrice = transaction.operationPrice
@@ -43,7 +44,7 @@ extension WalletShare {
             quantity += transaction.amount
             // TODO: Calculate price middle buy, when more buy transactions are added
             calculateBuyMiddlePrice(transaction)
-        case "Sell":
+        case .sell:
             amount = amount?.subtracting(NSDecimalNumber(value: transaction.amount))
             sellLastPrice = transaction.operationPrice
             sellLastQtd = Decimal(transaction.amount) as NSDecimalNumber
@@ -80,8 +81,6 @@ extension WalletShare {
         let amountValue = (self.amount?.doubleValue ?? 00) * (self.share?.price?.doubleValue ?? 0.0)
         let stockBuyAmount = (self.amount?.doubleValue ?? 00) * (self.stockBuyPrice?.doubleValue ?? 0.0)
         self.peformance = amountValue - stockBuyAmount
-        self.peformanceValue = Decimal(
-            (self.peformance / (self.stockBuyPrice?.doubleValue ?? 0.0)) * 100.0
-        ) as NSDecimalNumber
+        self.peformanceValue = (self.peformance / (self.stockBuyPrice?.doubleValue ?? 0.0)) * 100.0
     }
 }
