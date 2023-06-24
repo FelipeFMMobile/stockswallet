@@ -9,6 +9,7 @@ import SwiftApiSDK
 
 public enum WalletApi {
     case stockInfo(String)
+    case stocks
 }
 
 extension WalletApi: EndPoint {
@@ -16,6 +17,8 @@ extension WalletApi: EndPoint {
         switch self {
         case .stockInfo(let symbol):
             return "stock/\(symbol)"
+        case .stocks:
+            return "stock"
         }
     }
     public func header() -> Header {

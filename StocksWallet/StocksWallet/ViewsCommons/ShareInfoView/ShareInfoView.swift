@@ -16,7 +16,6 @@ struct ShareInfoView: View {
     }
     @EnvironmentObject var share: Share
     @State var shareData: ShareData
-    @State var isLoading = false
     var body: some View {
         VStack(spacing: 12.0) {
             HStack {
@@ -32,14 +31,9 @@ struct ShareInfoView: View {
                     self.shareData.shareSymbol = self.removeSpecialCharactes(text)
                 })
                 .onSubmit {
-                    isLoading = true
                     self.shareData.action(self.shareData.shareSymbol)
                 }
                 .disabled(shareData.isEditing)
-                Spacer()
-                ProgressView()
-                    .progressViewStyle(.circular)
-                    .opacity(isLoading ? 1 : 0)
             }
             VStack(alignment: .leading,
                    spacing: 8.0) {

@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
 class Environments: ObservableObject {
     private var routeTo: RouteOperation?
+    var path = NavigationPath()
     lazy var wallet: WalletEnvironment = WalletEnvironment(routeTo)
     lazy var broker: BrokerEnvironment = BrokerEnvironment(routeTo)
     lazy var walletShare: WalletShareEnvironment = WalletShareEnvironment(routeTo)

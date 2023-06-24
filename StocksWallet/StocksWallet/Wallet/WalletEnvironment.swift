@@ -94,6 +94,10 @@ class WalletEnvironment: ObservableObject {
         router?.changeRoute(RoutePath(.wallet_stock_add(wallet)))
     }
 
+    func goToInfoView(_ wallet: Wallet) {
+        router?.changeRoute(RoutePath(.wallet_info(wallet)))
+    }
+
     func goBack() {
         router?.backRoute()
     }

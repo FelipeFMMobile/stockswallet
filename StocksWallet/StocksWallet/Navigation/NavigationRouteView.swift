@@ -16,8 +16,7 @@ struct NavigationRouteView: View {
         .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
         .environmentObject(enviroment
             .route(
-                Environments.RouteOperation(changeRoute: changeRoute,
-                                           backRoute: backRoute)
+                Environments.RouteOperation(changeRoute: changeRoute, backRoute: backRoute)
             ).wallet)
     }
     var body: some View {

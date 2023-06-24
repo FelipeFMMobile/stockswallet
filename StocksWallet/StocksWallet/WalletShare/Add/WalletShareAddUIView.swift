@@ -13,6 +13,7 @@ struct WalletShareAddUIView: View {
     @EnvironmentObject var environment: WalletShareEnvironment
     @State private var data = WalletShareEnvironment.FormData()
     @State private var confirmationAlert = false
+    @State private var isLoading = false
     @FetchRequest(
         sortDescriptors: WalletEnvironment.sortDescriptorBroker,
         animation: .default)
@@ -20,16 +21,20 @@ struct WalletShareAddUIView: View {
     var body: some View {
         VStack {
             Text(str(Strings.subtitle))
-            
             Form {
                 // MARK: Stock Section
                 Section(header: Text(str(Strings.Fields.shareInfo))) {
-                    VStack {
+                    HStack(alignment: .top) {
                         ShareInfoView(shareData: ShareInfoView.ShareData(shareSymbol: data.shareSymbol, action: { symbol in
+                            self.isLoading = true
                             self.searchSymbol(symbol: symbol)
                         }))
                         .environment(\.managedObjectContext, environment.context)
                         .environmentObject(environment.share)
+                        ProgressView()
+                            .progressViewStyle(.circular)
+                            .offset(x: -60, y: 10)
+                            .opacity(isLoading ? 1 : 0)
                     }
                 }
                 // MARK: Transaction Section
@@ -138,6 +143,7 @@ struct WalletShareAddUIView: View {
             do {
                 try await environment.getStock(symbol:symbol)
                 data.shareSymbol = symbol
+                self.isLoading = false
             } catch {
                 environment.showErrorScreen(error)
             }

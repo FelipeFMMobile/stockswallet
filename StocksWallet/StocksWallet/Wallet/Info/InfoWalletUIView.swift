@@ -124,11 +124,14 @@ struct InfoWalletUIView: View {
                 Button(str(Strings.addStockButton)) {
                     enviroment.goAddShareView(wallet)
                 }
-            }, label: {Text(str(Strings.optionsMenu))})
+            }, label: { Text(str(Strings.optionsMenu)) })
             
         }
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)
+        .onAppear {
+            let timer = SharesUpdateTimer()
+        }
     }
 }
 
