@@ -10,8 +10,11 @@ import SwiftUI
 struct InfoWalletUIView: View {
     @EnvironmentObject var wallet: Wallet
     @EnvironmentObject var enviroment: WalletEnvironment
+    @StateObject var sharesUpdateTimer = SharesUpdateTimer()
+    @State var openedInfo = true
     var body: some View {
         List {
+            // MARK: Wallet
             Section {
                 VStack(alignment: .leading,
                        spacing: 8.0) {
@@ -21,7 +24,7 @@ struct InfoWalletUIView: View {
                         .font(.body)
                         .lineLimit(0)
                 }
-                .listRowSeparator(.visible)
+                       .listRowSeparator(.visible)
                 HStack(spacing: 0.0) {
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.originalAmount))")
@@ -58,54 +61,73 @@ struct InfoWalletUIView: View {
                     }
                     .opacity(wallet.hasOriginalAmount() ? 1 : 0)
                 }
-                HStack(spacing: 4.0) {
-                    VStack(alignment: .leading) {
-                        Text(str(Strings.totalStocks))
-                        Text("\(wallet.walletShares?.count ?? 0)")
-                    }
-                }
-                VStack(alignment: .leading,
-                       spacing: 4.0) {
-                    Text(wallet.broker?.name ?? "")
-                        .font(.title3)
-                    HStack(spacing: 0.0) {
+            }
+
+            // MARK: Expanded Infomartion
+            Section {
+                if openedInfo {
+                    HStack(spacing: 4.0) {
                         VStack(alignment: .leading) {
-                            Text("\(str(Strings.brokerAgency)) \(wallet.broker?.accountAgency ?? "")")
-                                .font(.body)
-                            Text("\(str(Strings.brokerAccount)) \(wallet.broker?.accountAgency ?? "")")
-                                .font(.body)
+                            Text(str(Strings.totalStocks))
+                            Text("\(wallet.walletShares?.count ?? 0)")
                         }
                     }
-                }
-                .listRowSeparator(.visible)
-                VStack(alignment: .trailing,
-                       spacing: 12.0) {
-                    HStack(spacing: 0.0) {
-                        VStack(alignment: .leading) {
-                            Text("\(str(Strings.created)) \(wallet.timestamp ?? Date(), formatter: WalletEnvironment.updatedDateFormatter)")
-                                .font(.body)
+                    VStack(alignment: .leading,
+                           spacing: 4.0) {
+                        Text(wallet.broker?.name ?? "")
+                            .font(.title3)
+                        HStack(spacing: 0.0) {
+                            VStack(alignment: .leading) {
+                                Text("\(str(Strings.brokerAgency)) \(wallet.broker?.accountAgency ?? "")")
+                                    .font(.body)
+                                Text("\(str(Strings.brokerAccount)) \(wallet.broker?.accountAgency ?? "")")
+                                    .font(.body)
+                            }
                         }
-                        Spacer()
                     }
-                    Text("\(str(Strings.typeWallet)) \(wallet.type ?? "")")
-                        .font(.body)
-                        .bold()
+                    .listRowSeparator(.visible)
+                    VStack(alignment: .trailing,
+                           spacing: 12.0) {
+                        HStack(spacing: 0.0) {
+                            VStack(alignment: .leading) {
+                                Text("\(str(Strings.created)) \(wallet.timestamp ?? Date(), formatter: WalletEnvironment.updatedDateFormatter)")
+                                    .font(.body)
+                            }
+                            Spacer()
+                        }
+                        Text("\(str(Strings.typeWallet)) \(wallet.type ?? "")")
+                            .font(.body)
+                            .bold()
+                    }
                 }
             } header: {
                 HStack(spacing: 0.0) {
                     Text("\(wallet.lastUpdate ?? Date(), formatter: WalletEnvironment.updatedDateFormatter)")
                     Spacer()
                     Text("\(wallet.isPrincipal ? str(Strings.principalWallet) : "")")
+                    Spacer(minLength: 10.0)
+                    Button {
+                        openedInfo = !openedInfo
+                    } label: {
+                        Image(systemName: "arrow.down")
+                            .rotationEffect(.degrees(openedInfo ? 0 : -180))
+                            .animation(.easeInOut, value: openedInfo)
+                    }
+                    
                 }
             }
             .listRowSeparator(.hidden)
+
+            // MARK: Shares
             Section(str(Strings.shareSection)) {
-                if wallet.getShares().count > 0 {
-                    ForEach(wallet.getShares(), id: \.self) { shares in
-                        InfoWalletShareRowUIView()
-                            .environmentObject(shares)
-                    }.onDelete { indexSet in
-                        enviroment.deleteWalletShares(wallet.getShares(),
+                let sharesArray = wallet.getShares()
+                if sharesArray.count > 0 {
+                    ForEach(sharesArray, id: \.id) { share in
+                        InfoWalletShareRowUIView(isUpdating: $sharesUpdateTimer.isLoading)
+                            .environmentObject(share)
+                    }
+                    .onDelete { indexSet in
+                        enviroment.deleteWalletShares(sharesArray,
                                                       offsets: indexSet)
                     }
                 } else {
@@ -114,6 +136,7 @@ struct InfoWalletUIView: View {
                 }
             }
         }
+        // MARK: ToolBar
         .toolbar {
             EditButton()
                 .opacity(wallet.getShares().count > 0 ? 1.0 : 0.0)
@@ -129,8 +152,11 @@ struct InfoWalletUIView: View {
         }
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)
-        .onAppear {
-            let timer = SharesUpdateTimer()
+        .task {
+            sharesUpdateTimer.start()
+        }
+        .onDisappear {
+            sharesUpdateTimer.stop()
         }
     }
 }

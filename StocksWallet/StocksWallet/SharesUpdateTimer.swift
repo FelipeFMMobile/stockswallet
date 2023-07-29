@@ -7,13 +7,14 @@
 
 import Foundation
 
-class SharesUpdateTimer {
+class SharesUpdateTimer: ObservableObject {
     private var timer: Timer?
-    private let interval: TimeInterval = 10.0
+    private let interval: TimeInterval = 5.0
     private let shareUpdate = SharesUpdate()
     private var task: Task<[Share], Error>?
-    
-    init() {
+    @Published var isLoading: Bool = false
+
+    public func start() {
         timer = Timer.scheduledTimer(timeInterval: interval, target: self,
                                      selector: #selector(timerFired),
                                      userInfo: nil, repeats: true)
@@ -21,13 +22,25 @@ class SharesUpdateTimer {
 
     @objc func timerFired() {
         // Perform your desired actions here
-        task = Task<[Share], Error> {
+        task = Task<[Share], Error>(priority: .background) {
+            await loadingState(isLoading: true)
             if let result = try? await shareUpdate.getUpdatedShares() {
                 print("shares update! \(result)")
+                await loadingState(isLoading: false)
                 return []
             }
             return []
         }
+    }
+
+    @MainActor
+    func loadingState(isLoading value: Bool) async {
+        isLoading = value
+    }
+    
+    @MainActor
+    func newValue(result: Bool, values: [Share]) {
+        
     }
 
     func stop() {

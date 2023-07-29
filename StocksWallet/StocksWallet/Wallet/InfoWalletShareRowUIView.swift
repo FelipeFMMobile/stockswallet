@@ -7,9 +7,11 @@
 
 import SwiftUI
 import CoreData
+import Combine
 
 struct InfoWalletShareRowUIView: View {
     @EnvironmentObject var share: WalletShare
+    @Binding var isUpdating: Bool
     var body: some View {
         HStack(alignment: .top,
                spacing: 12.0) {
@@ -24,6 +26,7 @@ struct InfoWalletShareRowUIView: View {
                         .font(.title3)
                     Text(share.share?.price ?? 0.0, formatter: WalletEnvironment.currencyFormatter)
                         .font(.title2)
+                        .redacted(reason: isUpdating ? .placeholder : [])
                 }.padding(.bottom, 8)
                 HStack {
                     VStack(alignment: .leading){
@@ -34,10 +37,11 @@ struct InfoWalletShareRowUIView: View {
                     }
                     Spacer()
                     VStack(alignment: .trailing) {
-                        Text("\(str(Strings.buyDate))")
+                        Text("\(str(Strings.lastDate))")
                             .monospacedDigit()
-                        Text("\(share.lastBuyDate ?? Date(), formatter: WalletEnvironment.shortDateFormatter)")
+                        Text("\(share.share?.updatedDate ?? Date(), formatter: WalletEnvironment.updatedDateFormatter)")
                             .monospacedDigit()
+                            .redacted(reason: isUpdating ? .placeholder : [])
                     }
                 }
             }
@@ -48,7 +52,7 @@ struct InfoWalletShareRowUIView: View {
 struct InfoWalletShareRowUIView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            InfoWalletShareRowUIView()
+            InfoWalletShareRowUIView(isUpdating: .constant(false))
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
                 .environmentObject(PersistenceController.walletPreview.walletShares?.allObjects.first as! WalletShare)
         }.previewLayout(.fixed(width: 345, height: 90))
@@ -58,7 +62,7 @@ struct InfoWalletShareRowUIView_Previews: PreviewProvider {
 extension InfoWalletShareRowUIView: StringsView {
     enum Strings: String, RawRepresentable {
         case buyPrice = "buy: "
-        case buyDate = "last date: "
+        case lastDate = "last date: "
         case unitSymbol = "un"
     }
 }

@@ -8,7 +8,6 @@
 import SwiftUI
 import CoreData
 
-// TODO: Could be Data Enviroment or other thing 
 class WalletEnvironment: ObservableObject {
     private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
