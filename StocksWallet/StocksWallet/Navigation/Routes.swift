@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import SwiftUI
 
 enum Routes: Equatable {
     case wallet_list, wallet_creation, wallet_info(Wallet), wallet_edit(Wallet)
@@ -57,4 +58,11 @@ struct RoutePath: Hashable {
     static func == (lhs: RoutePath, rhs: RoutePath) -> Bool {
         lhs.route == rhs.route
     }
+}
+
+class Router: ObservableObject {
+    static var shared: Router = Router()
+    
+    var changeRoute: ((RoutePath) -> Void)!
+    var backRoute: (() -> Void)!
 }

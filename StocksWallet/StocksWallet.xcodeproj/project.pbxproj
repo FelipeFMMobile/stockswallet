@@ -16,6 +16,7 @@
 		BC49F4A22A1C258600226A71 /* SharesUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49F4A12A1C258600226A71 /* SharesUpdate.swift */; };
 		BC4B2E072A01E1A40040AC2D /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B2E062A01E1A40040AC2D /* Environments.swift */; };
 		BC4B2E092A01E1D30040AC2D /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B2E082A01E1D30040AC2D /* Routes.swift */; };
+		BC4FD85D2A78862400B4A50D /* IntroUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4FD85C2A78862400B4A50D /* IntroUIView.swift */; };
 		BC5BF37F2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5BF37E2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift */; };
 		BC5F75902A0852D6004DDF9C /* GenericErrorUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F758F2A0852D6004DDF9C /* GenericErrorUIView.swift */; };
 		BC5F75932A0852F5004DDF9C /* GenericErrorUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F75922A0852F5004DDF9C /* GenericErrorUIView+Strings.swift */; };
@@ -90,6 +91,7 @@
 		BC49F4A12A1C258600226A71 /* SharesUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharesUpdate.swift; sourceTree = "<group>"; };
 		BC4B2E062A01E1A40040AC2D /* Environments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environments.swift; sourceTree = "<group>"; };
 		BC4B2E082A01E1D30040AC2D /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		BC4FD85C2A78862400B4A50D /* IntroUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUIView.swift; sourceTree = "<group>"; };
 		BC5BF37E2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharesUpdateTimer.swift; sourceTree = "<group>"; };
 		BC5F758F2A0852D6004DDF9C /* GenericErrorUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorUIView.swift; sourceTree = "<group>"; };
 		BC5F75922A0852F5004DDF9C /* GenericErrorUIView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericErrorUIView+Strings.swift"; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		BC4FD85B2A78860F00B4A50D /* Intro */ = {
+			isa = PBXGroup;
+			children = (
+				BC4FD85C2A78862400B4A50D /* IntroUIView.swift */,
+			);
+			path = Intro;
+			sourceTree = "<group>";
+		};
 		BC5F75912A0852E1004DDF9C /* GenericError */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,11 +311,12 @@
 		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
 			isa = PBXGroup;
 			children = (
+				BC4B2E0A2A01E1F00040AC2D /* Navigation */,
+				BC4FD85B2A78860F00B4A50D /* Intro */,
 				BC49F49C2A1C15DC00226A71 /* Extensions */,
 				BCEA2F262A05A35100131661 /* Networking */,
 				BC985AED2A02D231001C819B /* Models+Calculations */,
 				BC8AB7C329EF5E3F00919332 /* ViewsCommons */,
-				BC4B2E0A2A01E1F00040AC2D /* Navigation */,
 				BCF6EA8529F744920048E652 /* Broker */,
 				BC0DC4E829E621110031BC30 /* Wallet */,
 				BC985AEA2A02D1B8001C819B /* WalletShare */,
@@ -610,6 +621,7 @@
 				BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */,
 				BC49F49E2A1C15F100226A71 /* Double+Extension.swift in Sources */,
 				BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */,
+				BC4FD85D2A78862400B4A50D /* IntroUIView.swift in Sources */,
 				BCF6EA8929F746950048E652 /* ListBrokerUIView.swift in Sources */,
 				BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */,
 				BC985AF12A02D31C001C819B /* WalletShareAddUIView.swift in Sources */,
@@ -794,12 +806,15 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StocksWallet;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -832,12 +847,15 @@
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = StocksWallet;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

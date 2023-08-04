@@ -12,7 +12,7 @@ actor SharesUpdate {
     private var service = WalletService()
     private let request: NSFetchRequest<Share> = Share.fetchRequest()
     private(set) var loadingError: Error?
-    // var priceCounter = 10.89
+    var priceCounter = 10.89
 
     func getUpdatedShares() async throws -> Bool {
         typealias ApiContinuation = CheckedContinuation<Bool, Error>
@@ -20,10 +20,10 @@ actor SharesUpdate {
             service.getStocks { result in
                 switch result {
                 case .success(let model):
-//                    let modelCount = model.first
-//                    self.priceCounter += 0.01
-//                    modelCount?.price = self.priceCounter
-                    self.updateShares(model: model)
+                    let modelCount = model.first
+                    self.priceCounter += 0.01
+                    modelCount?.price = self.priceCounter
+                    self.updateShares(model: [modelCount!])
                     continuation.resume(returning: true)
                 case .failure(let error):
                     continuation.resume(throwing: error)
