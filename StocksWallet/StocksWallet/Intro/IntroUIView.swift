@@ -13,10 +13,15 @@ struct IntroUIView: View {
         ZStack {
             HStack(alignment: .bottom) {
                 Spacer()
-                Text("Stocks")
+                Text(str(Strings.nameTitle))
                     .font(.largeTitle)
-                Text("Wallet")
-                    .font(.title3)
+                HStack(spacing: 2) {
+                    Text(str(Strings.nameDesc))
+                        .font(.title3)
+                    Image(systemName: "dollarsign.circle")
+                    Image(systemName: "yensign.circle")
+                    Image(systemName: "eurosign.circle")
+                }
                 Spacer()
             }
         }.task {

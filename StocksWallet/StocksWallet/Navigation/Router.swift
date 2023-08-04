@@ -20,7 +20,7 @@ struct RoutePath: Hashable {
     }
 
     static func == (lhs: RoutePath, rhs: RoutePath) -> Bool {
-        lhs.hashValue == rhs.hashValue
+        lhs.route == rhs.route
     }
 }
 

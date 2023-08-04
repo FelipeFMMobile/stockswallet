@@ -24,6 +24,7 @@
 		BC6B8C572A09904D006F31AF /* TextFieldDecimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B8C562A09904D006F31AF /* TextFieldDecimalView.swift */; };
 		BC6B8C592A099697006F31AF /* WalletShare+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B8C582A099697006F31AF /* WalletShare+Calculations.swift */; };
 		BC6DAC262A7D9D4B005FADE1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6DAC252A7D9D4B005FADE1 /* Router.swift */; };
+		BC6DAC2C2A7DAA5A005FADE1 /* IntroUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6DAC2B2A7DAA5A005FADE1 /* IntroUIView+Strings.swift */; };
 		BC76AEA12A02E98A00D30163 /* Share+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC76AEA02A02E98A00D30163 /* Share+Calculations.swift */; };
 		BC8AB7C529EF5E6A00919332 /* ConfirmationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */; };
 		BC8AB7C729EF6CF800919332 /* CreateWalletUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C629EF6CF800919332 /* CreateWalletUIView+Strings.swift */; };
@@ -100,6 +101,8 @@
 		BC6B8C562A09904D006F31AF /* TextFieldDecimalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDecimalView.swift; sourceTree = "<group>"; };
 		BC6B8C582A099697006F31AF /* WalletShare+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletShare+Calculations.swift"; sourceTree = "<group>"; };
 		BC6DAC252A7D9D4B005FADE1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		BC6DAC2B2A7DAA5A005FADE1 /* IntroUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntroUIView+Strings.swift"; sourceTree = "<group>"; };
+		BC6DAC2D2A7DAD8F005FADE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BC76AEA02A02E98A00D30163 /* Share+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Share+Calculations.swift"; sourceTree = "<group>"; };
 		BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationButtonView.swift; sourceTree = "<group>"; };
 		BC8AB7C629EF6CF800919332 /* CreateWalletUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateWalletUIView+Strings.swift"; sourceTree = "<group>"; };
@@ -225,6 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				BC4FD85C2A78862400B4A50D /* IntroUIView.swift */,
+				BC6DAC2B2A7DAA5A005FADE1 /* IntroUIView+Strings.swift */,
 			);
 			path = Intro;
 			sourceTree = "<group>";
@@ -314,6 +318,7 @@
 		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
 			isa = PBXGroup;
 			children = (
+				BC6DAC2D2A7DAD8F005FADE1 /* Info.plist */,
 				BC4B2E0A2A01E1F00040AC2D /* Navigation */,
 				BC4FD85B2A78860F00B4A50D /* Intro */,
 				BC49F49C2A1C15DC00226A71 /* Extensions */,
@@ -643,6 +648,7 @@
 				BCBD34CE29F3270300FF87B5 /* Wallet+Calculations.swift in Sources */,
 				BCF6EA8D29F748DA0048E652 /* CreateBrokerUIView.swift in Sources */,
 				BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */,
+				BC6DAC2C2A7DAA5A005FADE1 /* IntroUIView+Strings.swift in Sources */,
 				BCEA2F232A059A2B00131661 /* ShareInfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -803,13 +809,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 9YZYY9PGW5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StocksWallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StocksWallet;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -845,12 +853,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
+				DEVELOPMENT_TEAM = 9YZYY9PGW5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = StocksWallet/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = StocksWallet;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -871,6 +882,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.fmmobile.stockswallet;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -887,6 +899,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 9YZYY9PGW5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
@@ -910,6 +923,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 9YZYY9PGW5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
