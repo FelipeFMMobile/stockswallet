@@ -9,7 +9,8 @@ import SwiftUI
 import CoreData
 
 // TODO: Could be Data Enviroment or other thing 
-class WalletEnviroment: ObservableObject {
+class WalletEnvironment: ObservableObject {
+    private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
 
     struct FormData {
@@ -31,16 +32,12 @@ class WalletEnviroment: ObservableObject {
             selectedType = wallet.type ?? ""
         }
     }
-
-    @Published var path = NavigationPath()
     let walletTypes = ["Simulation", "Operation"]
-    
-    enum Route: Hashable {
-        case create
-        case info(Wallet)
-        case edition(Wallet)
-    }
 
+    init(_ route: Environments.RouteOperation? = nil) {
+        self.router = route
+    }
+    
     // MARK: SortedDescriptors
 
     static var sortDescriptorList = [
@@ -56,6 +53,13 @@ class WalletEnviroment: ObservableObject {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
+        return formatter
+    }()
+
+    static var shortDateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.timeStyle = .none
         return formatter
     }()
 
@@ -79,11 +83,27 @@ class WalletEnviroment: ObservableObject {
 
     // MARK: Navigation
     func goToCreateView() {
-        self.path.append(Route.create)
+        router?.changeRoute(RoutePath(.wallet_creation))
     }
 
     func goToEditView(_ wallet: Wallet) {
-        self.path.append(Route.edition(wallet))
+        router?.changeRoute(RoutePath(.wallet_edit(wallet)))
+    }
+
+    func goAddShareView(_ wallet: Wallet) {
+        router?.changeRoute(RoutePath(.wallet_stock_add(wallet)))
+    }
+
+    func goBack() {
+        router?.backRoute()
+    }
+
+    func goToBrokerCreationView() {
+        router?.changeRoute(RoutePath(.broker_creation))
+    }
+
+    func goToBrokerListView() {
+        router?.changeRoute(RoutePath(.broker_list))
     }
 
     // MARK: Operations
@@ -129,6 +149,20 @@ class WalletEnviroment: ObservableObject {
 
     @discardableResult
     func deleteItems(_ wallets: FetchedResults<Wallet>, offsets: IndexSet) -> Bool{
+        withAnimation {
+            offsets.map { wallets[$0] }.forEach(context.delete)
+            do {
+                try context.save()
+                return true
+            } catch {
+                _ = error as NSError
+                return false
+            }
+        }
+    }
+
+    @discardableResult
+    func deleteWalletShares(_ wallets: [WalletShare], offsets: IndexSet) -> Bool{
         withAnimation {
             offsets.map { wallets[$0] }.forEach(context.delete)
             do {

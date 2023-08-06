@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Broker" representedClassName="Broker" syncable="YES" codeGenerationType="class">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Broker" representedClassName="Broker" parentEntity="Object" syncable="YES" codeGenerationType="class">
         <attribute name="accountAgency" optional="YES" attributeType="String"/>
         <attribute name="accountNumber" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="otherInfo" optional="YES" attributeType="String"/>
         <relationship name="wallets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Wallet" inverseName="broker" inverseEntity="Wallet"/>
@@ -11,17 +10,74 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
     </entity>
-    <entity name="Wallet" representedClassName="Wallet" syncable="YES" codeGenerationType="class">
-        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-        <attribute name="amountTarget" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+    <entity name="Object" representedClassName="Object" isAbstract="YES" syncable="YES" codeGenerationType="class">
         <attribute name="identifier" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Share" representedClassName="Share" parentEntity="Object" syncable="YES" codeGenerationType="class">
+        <attribute name="average" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="lastPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="maximum" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="minimum" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="open" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="price" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="symbol" optional="YES" attributeType="String"/>
+        <attribute name="updatedDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="variation" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="volume" optional="YES" attributeType="String"/>
+        <relationship name="walletShare" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalletShare" inverseName="share" inverseEntity="WalletShare"/>
+    </entity>
+    <entity name="Transaction" representedClassName="Transaction" parentEntity="Object" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="brokerage" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="operationPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="tax" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="transactionDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="walletShare" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WalletShare" inverseName="transactions" inverseEntity="WalletShare"/>
+    </entity>
+    <entity name="Wallet" representedClassName="Wallet" parentEntity="Object" syncable="YES" codeGenerationType="class">
+        <attribute name="amountTarget" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="firstOperationDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="isPrincipal" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-        <attribute name="originalAmount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String" spotlightIndexingEnabled="YES"/>
         <attribute name="type" optional="YES" attributeType="String"/>
         <relationship name="broker" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Broker" inverseName="wallets" inverseEntity="Broker"/>
+        <relationship name="walletShares" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="WalletShare" inverseName="wallet" inverseEntity="WalletShare"/>
+    </entity>
+    <entity name="WalletShare" representedClassName="WalletShare" parentEntity="Object" syncable="YES" codeGenerationType="class">
+        <attribute name="amount" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="amountBuyValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="amountValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="brokerRevenue" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="brokerTotalRevenue" optional="YES" transient="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="buyFirstPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="buyFirstQtd" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="compositionWallet" optional="YES" transient="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="lastBuyDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="lastSellDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="opened" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="peformance" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="peformanceValue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="releaseEarnings" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="releaseEarningsRate" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="releaseValue" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="runningDays" optional="YES" transient="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="sellLastPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="sellLastQtd" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="status" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="stockBuyPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="stockSellPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="stopDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="stopPercentage" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="stopValue" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
+        <relationship name="share" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Share" inverseName="walletShare" inverseEntity="Share"/>
+        <relationship name="transactions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Transaction" inverseName="walletShare" inverseEntity="Transaction"/>
+        <relationship name="wallet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Wallet" inverseName="walletShares" inverseEntity="Wallet"/>
     </entity>
 </model>

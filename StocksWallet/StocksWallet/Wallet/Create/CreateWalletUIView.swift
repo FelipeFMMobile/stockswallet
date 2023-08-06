@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct CreateWalletUIView: View {
-    @EnvironmentObject var enviroment: WalletEnviroment
-    @State private var data = WalletEnviroment.FormData()
+    @EnvironmentObject var enviroment: WalletEnvironment
+    @State private var data = WalletEnvironment.FormData()
     @State private var confirmationAlert = false
     @FetchRequest(
-        sortDescriptors: WalletEnviroment.sortDescriptorBroker,
+        sortDescriptors: WalletEnvironment.sortDescriptorBroker,
         animation: .default)
     var brokers: FetchedResults<Broker>
     var body: some View {
@@ -28,7 +28,7 @@ struct CreateWalletUIView: View {
 
                 Section(header: Text(str(Strings.Fields.broker))) {
                     if brokers.isEmpty {
-                        NavigationLink(str(Strings.Fields.brokerCreate)) {
+                        NavigationLink(value:  RoutePath(.broker_creation)) {
                             Text(str(Strings.Fields.brokerInfo))
                         }
                     } else {
@@ -70,7 +70,7 @@ struct CreateWalletUIView: View {
                           alertMessage: str(Strings.alertDesc)) {
                               enviroment.createNewWattet(data: data,
                                                          broker: brokers[data.selectedBrokerIndex])
-                              enviroment.path.removeLast()
+                              enviroment.goBack()
                           }
             )
             .disabled(!data.isValid())
@@ -84,6 +84,6 @@ struct CreateWalletUIView_Previews: PreviewProvider {
     static var previews: some View {
         CreateWalletUIView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(WalletEnviroment())
+            .environmentObject(WalletEnvironment())
     }
 }

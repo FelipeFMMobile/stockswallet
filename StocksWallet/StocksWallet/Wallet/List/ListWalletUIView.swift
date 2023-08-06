@@ -9,16 +9,15 @@ import SwiftUI
 import CoreData
 
 struct ListWalletUIView: View {
-    @EnvironmentObject var enviroment: WalletEnviroment
+    @EnvironmentObject var enviroment: WalletEnvironment
     @FetchRequest(
-        sortDescriptors: WalletEnviroment.sortDescriptorList,
+        sortDescriptors: WalletEnvironment.sortDescriptorList,
         animation: .default)
     var wallets: FetchedResults<Wallet>
     var body: some View {
-        NavigationStack(path: $enviroment.path) {
             List {
                 ForEach(wallets) { wallet in
-                    NavigationLink(value:  WalletEnviroment.Route.info(wallet)) {
+                    NavigationLink(value:  RoutePath(.wallet_info(wallet))) {
                         ListWalletRowUIView()
                             .environmentObject(wallet)
                     }
@@ -31,26 +30,15 @@ struct ListWalletUIView: View {
             .listStyle(.inset)
             .toolbar {
                 EditButton()
-                Button(str(Strings.addAction)) {
-                    enviroment.goToCreateView()
-                }
+                Menu(content: {
+                    Button(str(Strings.addAction)) {
+                        enviroment.goToCreateView()
+                    }
+                    Button(str(Strings.brokersAction)) {
+                        enviroment.goToBrokerListView()
+                    }
+                }, label: {Text(str(Strings.optionsMenu))})
             }
-            .navigationDestination(for: WalletEnviroment.Route.self) { (view: WalletEnviroment.Route) in
-                switch view {
-                case .create:
-                    CreateWalletUIView()
-                        .environmentObject(enviroment)
-                case .info(let wallet):
-                    InfoWalletUIView()
-                        .environmentObject(wallet)
-                        .environmentObject(enviroment)
-                case .edition(let wallet):
-                    EditWalletUIView()
-                        .environmentObject(wallet)
-                        .environmentObject(enviroment)
-                }
-            }
-        }
     }
 }
 
@@ -58,6 +46,6 @@ struct ListWalletUIView_Previews: PreviewProvider {
     static var previews: some View {
         ListWalletUIView()
             .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(WalletEnviroment())
+            .environmentObject(WalletEnvironment())
     }
 }
