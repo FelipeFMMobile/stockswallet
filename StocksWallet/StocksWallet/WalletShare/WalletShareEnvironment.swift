@@ -9,8 +9,8 @@ import CoreData
 import SwiftApiSDK
 
 class WalletShareEnvironment: ObservableObject {
-    private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
+    let router = Router.shared
     @Published var share: Share = Share(context: PersistenceController.shared.container.viewContext)
     let operationTypes = ["Buy", "Sell"]
 
@@ -33,11 +33,6 @@ class WalletShareEnvironment: ObservableObject {
             // TODO: Fix this for mask
             return !shareSymbol.isEmpty && !transactionPrice.isEmpty && !transactionAmount.isEmpty
         }
-    }
-
-    // MARK: Router
-    init(_ route: Environments.RouteOperation? = nil) {
-        self.router = route
     }
 
     // MARK: Operations
@@ -147,10 +142,10 @@ class WalletShareEnvironment: ObservableObject {
     // MARK: Navigation
 
     func showErrorScreen(_ error: Error) {
-        router?.changeRoute(RoutePath(.error_screen(error)))
+        router.changeRoute(RoutePath(.error_screen(error)))
     }
 
     func goBack() {
-        router?.backRoute()
+        router.backRoute()
     }
 }

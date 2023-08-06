@@ -10,52 +10,45 @@ import CoreData
 
 struct NavigationRouteView: View {
     private var enviroment = Environments()
+    private var viewContext = PersistenceController.shared.container.viewContext
     @State private var path = NavigationPath()
-    var rootView: some View {
-         ListWalletUIView()
-        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-        .environmentObject(enviroment
-            .route(
-                Environments.RouteOperation(changeRoute: changeRoute,
-                                           backRoute: backRoute)
-            ).wallet)
-    }
+    
     var body: some View {
         NavigationStack(path: $path) {
             HStack {
-                rootView
+                make(ListWalletUIView()
+                    .environmentObject(enviroment.wallet))
+                .task {
+                     Router.shared.changeRoute = changeRoute
+                     Router.shared.backRoute = backRoute
+                }
             }
             .navigationDestination(for: RoutePath.self) { route in
                 switch route.route {
                 case .wallet_list:
-                    rootView
+                    make(ListWalletUIView())
+                        .environmentObject(enviroment.wallet)
                 case .wallet_creation:
-                    CreateWalletUIView()
-                        .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                        .environmentObject(self.enviroment.wallet)
+                    make(CreateWalletUIView())
+                        .environmentObject(enviroment.wallet)
                 case .wallet_info(let wallet):
-                    InfoWalletUIView()
-                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                       .environmentObject(wallet)
-                       .environmentObject(enviroment.wallet)
+                    make(InfoWalletUIView())
+                        .environmentObject(enviroment.wallet)
+                        .environmentObject(wallet)
                 case .wallet_edit(let wallet):
-                    EditWalletUIView()
-                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                       .environmentObject(wallet)
-                       .environmentObject(enviroment.wallet)
+                    make(EditWalletUIView())
+                        .environmentObject(enviroment.wallet)
+                        .environmentObject(wallet)
                 case .broker_list:
-                    ListBrokerUIView()
-                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                       .environmentObject(enviroment.broker)
+                    make(ListBrokerUIView())
+                        .environmentObject(enviroment.broker)
                 case .broker_creation:
-                    CreateBrokerUIView()
-                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                       .environmentObject(enviroment.broker)
+                    make(CreateBrokerUIView())
+                        .environmentObject(enviroment.broker)
                 case .wallet_stock_add(let wallet):
-                    WalletShareAddUIView()
-                       .environment(\.managedObjectContext, PersistenceController.shared.container.viewContext)
-                       .environmentObject(wallet)
-                       .environmentObject(enviroment.walletShare)
+                    make(WalletShareAddUIView())
+                        .environmentObject(enviroment.walletShare)
+                        .environmentObject(wallet)
                 case .error_screen(let error):
                     GenericErrorUIView(apiError: error)
                 case .none:
@@ -65,6 +58,12 @@ struct NavigationRouteView: View {
         }
     }
 
+    private func make(_ view: some View) -> some View {
+        return view
+            .environment(\.managedObjectContext, viewContext)
+    }
+
+    // MARK: Route
     func changeRoute(_ route: RoutePath) {
         path.append(route)
     }

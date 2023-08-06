@@ -6,20 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
+import Combine
 
-class Environments: ObservableObject {
-    private var routeTo: RouteOperation?
-    lazy var wallet: WalletEnvironment = WalletEnvironment(routeTo)
-    lazy var broker: BrokerEnvironment = BrokerEnvironment(routeTo)
-    lazy var walletShare: WalletShareEnvironment = WalletShareEnvironment(routeTo)
-
-    struct RouteOperation {
-        var changeRoute: ((RoutePath) -> Void)
-        var backRoute: (() -> Void)
-    }
-
-    func route(_ route: RouteOperation) -> Self {
-        self.routeTo = route
-        return self
-    }
+class Environments {
+    lazy var wallet = WalletEnvironment()
+    lazy var broker = BrokerEnvironment()
+    lazy var walletShare = WalletShareEnvironment()
 }

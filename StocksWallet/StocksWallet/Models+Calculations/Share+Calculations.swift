@@ -5,7 +5,7 @@
 //  Created by Felipe Menezes on 03/05/23.
 //
 
-import Foundation
+import CoreData
 
 extension Share {
     func peformanceIndicator() -> Int {
@@ -17,5 +17,4 @@ extension Share {
         }
         return 0
     }
-
 }

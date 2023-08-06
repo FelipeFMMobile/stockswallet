@@ -9,9 +9,8 @@ import SwiftUI
 import CoreData
 
 class BrokerEnvironment: ObservableObject {
-    private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
-
+    let router = Router.shared
     struct FormData {
         var name = ""
         var otherInfo = ""
@@ -29,9 +28,6 @@ class BrokerEnvironment: ObservableObject {
         NSSortDescriptor(keyPath: \Broker.name, ascending: true)
     ]
 
-    init(_ route: Environments.RouteOperation? = nil) {
-        self.router = route
-    }
     // MARK: Operations
     
     @discardableResult
@@ -68,11 +64,11 @@ class BrokerEnvironment: ObservableObject {
 
     // MARK: Navigation
     func gottoCreateBrokerView() {
-        router?.changeRoute(RoutePath(.broker_creation))
+        router.changeRoute(RoutePath(.broker_creation))
     }
 
     func goBack() {
-        router?.backRoute()
+        router.backRoute()
     }
 
 }

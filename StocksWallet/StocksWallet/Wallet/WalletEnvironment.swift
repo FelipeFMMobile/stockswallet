@@ -8,11 +8,9 @@
 import SwiftUI
 import CoreData
 
-// TODO: Could be Data Enviroment or other thing 
 class WalletEnvironment: ObservableObject {
-    private var router: Environments.RouteOperation?
     let context = PersistenceController.shared.container.viewContext
-
+    let router = Router.shared
     struct FormData {
         var name = ""
         var information = ""
@@ -32,11 +30,8 @@ class WalletEnvironment: ObservableObject {
             selectedType = wallet.type ?? ""
         }
     }
-    let walletTypes = ["Simulation", "Operation"]
 
-    init(_ route: Environments.RouteOperation? = nil) {
-        self.router = route
-    }
+    let walletTypes = ["Simulation", "Operation"]
     
     // MARK: SortedDescriptors
 
@@ -83,27 +78,31 @@ class WalletEnvironment: ObservableObject {
 
     // MARK: Navigation
     func goToCreateView() {
-        router?.changeRoute(RoutePath(.wallet_creation))
+        router.changeRoute(RoutePath(.wallet_creation))
     }
 
     func goToEditView(_ wallet: Wallet) {
-        router?.changeRoute(RoutePath(.wallet_edit(wallet)))
+        router.changeRoute(RoutePath(.wallet_edit(wallet)))
     }
 
     func goAddShareView(_ wallet: Wallet) {
-        router?.changeRoute(RoutePath(.wallet_stock_add(wallet)))
+        router.changeRoute(RoutePath(.wallet_stock_add(wallet)))
+    }
+
+    func goToInfoView(_ wallet: Wallet) {
+        router.changeRoute(RoutePath(.wallet_info(wallet)))
     }
 
     func goBack() {
-        router?.backRoute()
+        router.backRoute()
     }
 
     func goToBrokerCreationView() {
-        router?.changeRoute(RoutePath(.broker_creation))
+        router.changeRoute(RoutePath(.broker_creation))
     }
 
     func goToBrokerListView() {
-        router?.changeRoute(RoutePath(.broker_list))
+        router.changeRoute(RoutePath(.broker_list))
     }
 
     // MARK: Operations

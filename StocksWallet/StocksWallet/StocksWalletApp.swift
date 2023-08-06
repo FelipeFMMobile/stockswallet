@@ -13,7 +13,7 @@ struct StocksWalletApp: App {
     
     var body: some Scene {
         WindowGroup {
-            NavigationRouteView()
+            IntroUIView()
         }
     }
 }

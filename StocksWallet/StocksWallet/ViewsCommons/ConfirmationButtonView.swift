@@ -20,12 +20,12 @@ struct ConfirmationButtonView: View {
         HStack {
             Button(action: {
                 confirmationAlert = !confirmationAlert
-            }) {
+            }, label: {
                 Text(info.buttonTitle)
                     .frame(minWidth: 300.0,
                            alignment: .center)
                     .padding(8.0)
-            }
+            })
             .buttonStyle(.borderedProminent)
             .padding(24.0)
         }
