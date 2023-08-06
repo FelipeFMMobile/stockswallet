@@ -10,12 +10,45 @@ import CoreData
 struct PersistenceController {
     static let shared = PersistenceController()
 
+    // TODO: Move to another place
+    static var walletPreview: Wallet!
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
+        }
+        // Broker
+        let broker1 = Broker(context: viewContext)
+        broker1.name = "Broker 1"
+        broker1.accountAgency = "AG6790"
+        broker1.accountNumber = "192009309"
+        broker1.otherInfo = "main broker"
+        let broker2 = Broker(context: viewContext)
+        broker2.name = "Broker 2"
+        broker2.accountAgency = "AG5555"
+        broker2.accountNumber = "890808098"
+        broker2.otherInfo = "other broker"
+        // Wallet
+        for idx in 0..<10 {
+            let newItem = Wallet(context: viewContext)
+            newItem.timestamp = Date()
+            newItem.identifier = UUID()
+            newItem.name = "Wallet n:\(newItem.identifier?.uuidString ?? "")"
+            newItem.amount = 10.0
+            newItem.amountTarget = 5.0
+            newItem.isPrincipal = false
+            if idx == 0 {
+                newItem.isPrincipal = true
+                newItem.information = "wallet information text"
+                newItem.originalAmount = 10.0
+                newItem.amount = 7.0
+                newItem.amountTarget = 10.0
+                walletPreview = newItem
+            }
+            newItem.type = "Simulation"
+            newItem.broker = idx % 2 > 0 ? broker1 : broker2
         }
         do {
             try viewContext.save()
