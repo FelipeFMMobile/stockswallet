@@ -141,14 +141,19 @@ struct InfoWalletUIView: View {
             EditButton()
                 .opacity(wallet.getShares().count > 0 ? 1.0 : 0.0)
             Menu(content: {
-                Button(str(Strings.editionButton)) {
+                Button {
                     enviroment.goToEditView(wallet)
+                } label: {
+                    Image(systemName: "list.bullet.rectangle.portrait")
+                    Text(str(Strings.editionButton))
                 }
-                Button(str(Strings.addStockButton)) {
+                Button {
                     enviroment.goAddShareView(wallet)
+                } label: {
+                    Image(systemName: "plus.circle")
+                    Text(str(Strings.addStockButton))
                 }
-            }, label: { Text(str(Strings.optionsMenu)) })
-            
+            }, label: { Image(systemName: "menucard") })
         }
         .navigationBarTitleDisplayMode(.inline)
         .listStyle(.plain)
