@@ -19,7 +19,7 @@ final class WalletService: WalletServiceProtocol {
     func getStockInfo(symbol: String, complete: @escaping RequetsResult<StockModel>) {
         let endpoint = WalletApi.stockInfo(symbol)
         let apiParam = ApiParamFactory.basic.generate(domain: StocksWalletDomain.self,
-                                                      endPoint: endpoint.path(),
+                                                      endPoint: endpoint,
                                                       params: GetParams(params: [:]))
         api.run(param: apiParam, StockModel.self) { result, _ in
             switch result {
@@ -34,7 +34,7 @@ final class WalletService: WalletServiceProtocol {
     func getStocks(complete: @escaping RequetsResult<[StockModel]>) {
         let endpoint = WalletApi.stocks
         let apiParam = ApiParamFactory.basic.generate(domain: StocksWalletDomain.self,
-                                                      endPoint: endpoint.path(),
+                                                      endPoint: endpoint,
                                                       params: GetParams(params: [:]))
         api.run(param: apiParam, [StockModel].self) { result, _ in
             switch result {

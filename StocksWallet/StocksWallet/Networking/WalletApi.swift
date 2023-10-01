@@ -16,11 +16,12 @@ extension WalletApi: EndPoint {
     public func path() -> Path {
         switch self {
         case .stockInfo(let symbol):
-            return "stock/\(symbol)"
+            return "stock-bff/stockapi/v1/\(symbol)"
         case .stocks:
-            return "stock"
+            return "stock-bff/stockapi/v1/"
         }
     }
+
     public func header() -> Header {
         switch self {
         default:

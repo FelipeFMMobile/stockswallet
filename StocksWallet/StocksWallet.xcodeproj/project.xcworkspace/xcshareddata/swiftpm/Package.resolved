@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/FelipeFMMobile/SwiftApiSDK",
       "state" : {
-        "revision" : "15d28ec57cadc19b9dfd710061eb188a388b582b",
-        "version" : "1.0.4"
+        "revision" : "20f04e5911e91cd6ecdc53d87620bb98d97d764a",
+        "version" : "1.1.0"
       }
     }
   ],

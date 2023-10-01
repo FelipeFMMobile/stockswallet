@@ -16,7 +16,7 @@ public struct ServerConfig {
 public struct StocksWalletDomain: WebDomainProtocol {
     enum Domain: String {
     case producao = "https://api.themoviedb.org/3/"
-    case homolog = "https://homolog.themoviedb.org/3/"
+    case homolog = "http://tradewallet-stage-alb-129607103.us-east-1.elb.amazonaws.com/"
     case dev = "https://private-388c00-fmmobile.apiary-mock.com/"
     }
     
@@ -24,7 +24,7 @@ public struct StocksWalletDomain: WebDomainProtocol {
 
     public func domainForBundle() -> String {
         #if DEBUG
-            return Domain.dev.rawValue
+            return Domain.homolog.rawValue
         #endif
 //        if let bundleID = Bundle.main.bundleIdentifier {
 //            if bundleID.range(of: "homolog") != nil {
