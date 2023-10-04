@@ -39,7 +39,6 @@
 		BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */; };
 		BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA029D48659003FBA45 /* Persistence.swift */; };
 		BCA92AA429D48659003FBA45 /* StocksWallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */; };
-		BCA92AA629D48659003FBA45 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AA529D48659003FBA45 /* ContentView.swift */; };
 		BCA92AA829D4865A003FBA45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA92AA729D4865A003FBA45 /* Assets.xcassets */; };
 		BCA92AAC29D4865A003FBA45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCA92AAB29D4865A003FBA45 /* Preview Assets.xcassets */; };
 		BCA92AB629D4865A003FBA45 /* StocksWalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCA92AB529D4865A003FBA45 /* StocksWalletTests.swift */; };
@@ -53,8 +52,9 @@
 		BCBD34CE29F3270300FF87B5 /* Wallet+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34CD29F3270300FF87B5 /* Wallet+Calculations.swift */; };
 		BCBD34D129F33C9800FF87B5 /* EditWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34D029F33C9800FF87B5 /* EditWalletUIView.swift */; };
 		BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */; };
+		BCC178882ACCE9AF004BCAEB /* ListBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC178872ACCE9AF004BCAEB /* ListBrokerUIView.swift */; };
+		BCC1788A2ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC178892ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift */; };
 		BCC3F3522A0EC64F0088D39E /* Wallet+CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3F3512A0EC64F0088D39E /* Wallet+CalculationsTests.swift */; };
-		BCCF52F12A0AE81D008AFC1C /* InfoWalletShareRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF52F02A0AE81D008AFC1C /* InfoWalletShareRowUIView.swift */; };
 		BCEA2F232A059A2B00131661 /* ShareInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F222A059A2B00131661 /* ShareInfoView.swift */; };
 		BCEA2F252A059B5200131661 /* ShareInfoView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F242A059B5100131661 /* ShareInfoView+Strings.swift */; };
 		BCEA2F282A05A36700131661 /* WalletService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F272A05A36700131661 /* WalletService.swift */; };
@@ -62,7 +62,6 @@
 		BCEA2F2C2A05A47600131661 /* StocksWalletDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F2B2A05A47600131661 /* StocksWalletDomain.swift */; };
 		BCEA2F2F2A05A4EE00131661 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F2E2A05A4EE00131661 /* StockModel.swift */; };
 		BCF6EA8729F744C20048E652 /* BrokerEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8629F744C20048E652 /* BrokerEnvironment.swift */; };
-		BCF6EA8929F746950048E652 /* ListBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8829F746950048E652 /* ListBrokerUIView.swift */; };
 		BCF6EA8B29F747260048E652 /* ListBrokerUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */; };
 		BCF6EA8D29F748DA0048E652 /* CreateBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */; };
 		BCF6EA9129F749310048E652 /* CreateBrokerUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */; };
@@ -121,7 +120,6 @@
 		BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletApp.swift; sourceTree = "<group>"; };
 		BCA92AA029D48659003FBA45 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		BCA92AA329D48659003FBA45 /* StocksWallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StocksWallet.xcdatamodel; sourceTree = "<group>"; };
-		BCA92AA529D48659003FBA45 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		BCA92AA729D4865A003FBA45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BCA92AA929D4865A003FBA45 /* StocksWallet.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StocksWallet.entitlements; sourceTree = "<group>"; };
 		BCA92AAB29D4865A003FBA45 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -137,8 +135,9 @@
 		BCBD34CD29F3270300FF87B5 /* Wallet+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Wallet+Calculations.swift"; sourceTree = "<group>"; };
 		BCBD34D029F33C9800FF87B5 /* EditWalletUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWalletUIView.swift; sourceTree = "<group>"; };
 		BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditWalletUIView+Strings.swift"; sourceTree = "<group>"; };
+		BCC178872ACCE9AF004BCAEB /* ListBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBrokerUIView.swift; sourceTree = "<group>"; };
+		BCC178892ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoWalletShareRowUIView.swift; path = StocksWallet/Flows/Wallet/InfoWalletShareRowUIView.swift; sourceTree = SOURCE_ROOT; };
 		BCC3F3512A0EC64F0088D39E /* Wallet+CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wallet+CalculationsTests.swift"; sourceTree = "<group>"; };
-		BCCF52F02A0AE81D008AFC1C /* InfoWalletShareRowUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoWalletShareRowUIView.swift; path = StocksWallet/Wallet/InfoWalletShareRowUIView.swift; sourceTree = SOURCE_ROOT; };
 		BCEA2F222A059A2B00131661 /* ShareInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInfoView.swift; sourceTree = "<group>"; };
 		BCEA2F242A059B5100131661 /* ShareInfoView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareInfoView+Strings.swift"; sourceTree = "<group>"; };
 		BCEA2F272A05A36700131661 /* WalletService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletService.swift; sourceTree = "<group>"; };
@@ -146,7 +145,6 @@
 		BCEA2F2B2A05A47600131661 /* StocksWalletDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksWalletDomain.swift; sourceTree = "<group>"; };
 		BCEA2F2E2A05A4EE00131661 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
 		BCF6EA8629F744C20048E652 /* BrokerEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BrokerEnvironment.swift; path = StocksWallet/BrokerEnvironment.swift; sourceTree = SOURCE_ROOT; };
-		BCF6EA8829F746950048E652 /* ListBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListBrokerUIView.swift; path = StocksWallet/Broker/List/ListBrokerUIView.swift; sourceTree = SOURCE_ROOT; };
 		BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBrokerUIView+Strings.swift"; sourceTree = "<group>"; };
 		BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBrokerUIView.swift; sourceTree = "<group>"; };
 		BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateBrokerUIView+Strings.swift"; sourceTree = "<group>"; };
@@ -331,26 +329,18 @@
 		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
 			isa = PBXGroup;
 			children = (
+				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
+				BCC1788C2ACCEAAC004BCAEB /* DataSource */,
 				BC6DAC2D2A7DAD8F005FADE1 /* Info.plist */,
 				BC4B2E0A2A01E1F00040AC2D /* Navigation */,
-				BC4FD85B2A78860F00B4A50D /* Intro */,
 				BC49F49C2A1C15DC00226A71 /* Extensions */,
 				BCEA2F262A05A35100131661 /* Networking */,
 				BC985AED2A02D231001C819B /* Models+Calculations */,
 				BC8AB7C329EF5E3F00919332 /* ViewsCommons */,
-				BCF6EA8529F744920048E652 /* Broker */,
-				BC0DC4E829E621110031BC30 /* Wallet */,
-				BC985AEA2A02D1B8001C819B /* WalletShare */,
-				BC6128D82A845928004B9658 /* Tutorials */,
-				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
-				BCA92AA029D48659003FBA45 /* Persistence.swift */,
-				BCA92AA529D48659003FBA45 /* ContentView.swift */,
+				BCC178862ACCE94D004BCAEB /* Flows */,
 				BCA92AA729D4865A003FBA45 /* Assets.xcassets */,
 				BCA92AA929D4865A003FBA45 /* StocksWallet.entitlements */,
-				BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */,
 				BCA92AAA29D4865A003FBA45 /* Preview Content */,
-				BC49F4A12A1C258600226A71 /* SharesUpdate.swift */,
-				BC5BF37E2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift */,
 			);
 			path = StocksWallet;
 			sourceTree = "<group>";
@@ -393,8 +383,8 @@
 		BCBD34C829F31E4200FF87B5 /* Info */ = {
 			isa = PBXGroup;
 			children = (
+				BCC178892ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift */,
 				BCBD34C929F31E8B00FF87B5 /* InfoWalletUIView.swift */,
-				BCCF52F02A0AE81D008AFC1C /* InfoWalletShareRowUIView.swift */,
 				BCBD34CB29F31EEF00FF87B5 /* InfoWalletUIView+Strings.swift */,
 			);
 			path = Info;
@@ -407,6 +397,37 @@
 				BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */,
 			);
 			path = Edition;
+			sourceTree = "<group>";
+		};
+		BCC178862ACCE94D004BCAEB /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				BCC1788B2ACCEA91004BCAEB /* ShareUpdate */,
+				BC6128D82A845928004B9658 /* Tutorials */,
+				BC985AEA2A02D1B8001C819B /* WalletShare */,
+				BC0DC4E829E621110031BC30 /* Wallet */,
+				BCF6EA8529F744920048E652 /* Broker */,
+				BC4FD85B2A78860F00B4A50D /* Intro */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		BCC1788B2ACCEA91004BCAEB /* ShareUpdate */ = {
+			isa = PBXGroup;
+			children = (
+				BC49F4A12A1C258600226A71 /* SharesUpdate.swift */,
+				BC5BF37E2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift */,
+			);
+			path = ShareUpdate;
+			sourceTree = "<group>";
+		};
+		BCC1788C2ACCEAAC004BCAEB /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				BCA92AA029D48659003FBA45 /* Persistence.swift */,
+				BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		BCEA2F262A05A35100131661 /* Networking */ = {
@@ -441,7 +462,7 @@
 		BCF6EA8E29F748E50048E652 /* List */ = {
 			isa = PBXGroup;
 			children = (
-				BCF6EA8829F746950048E652 /* ListBrokerUIView.swift */,
+				BCC178872ACCE9AF004BCAEB /* ListBrokerUIView.swift */,
 				BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */,
 			);
 			path = List;
@@ -639,26 +660,25 @@
 				BC76AEA12A02E98A00D30163 /* Share+Calculations.swift in Sources */,
 				BC5F75932A0852F5004DDF9C /* GenericErrorUIView+Strings.swift in Sources */,
 				BC95B57E29ECA5C7009D3035 /* CreateWalletUIView.swift in Sources */,
+				BCC178882ACCE9AF004BCAEB /* ListBrokerUIView.swift in Sources */,
 				BC5F75902A0852D6004DDF9C /* GenericErrorUIView.swift in Sources */,
 				BCEA2F2C2A05A47600131661 /* StocksWalletDomain.swift in Sources */,
 				BC6B8C592A099697006F31AF /* WalletShare+Calculations.swift in Sources */,
 				BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */,
 				BC49F49E2A1C15F100226A71 /* Double+Extension.swift in Sources */,
+				BCC1788A2ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift in Sources */,
 				BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */,
 				BC4FD85D2A78862400B4A50D /* IntroUIView.swift in Sources */,
-				BCF6EA8929F746950048E652 /* ListBrokerUIView.swift in Sources */,
 				BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */,
 				BC985AF12A02D31C001C819B /* WalletShareAddUIView.swift in Sources */,
 				BC985AEC2A02D1D6001C819B /* WalletShareEnvironment.swift in Sources */,
 				BC49F4A02A1C170700226A71 /* WalletTransactionType.swift in Sources */,
 				BCBD34D129F33C9800FF87B5 /* EditWalletUIView.swift in Sources */,
 				BC6B8C572A09904D006F31AF /* TextFieldDecimalView.swift in Sources */,
-				BCA92AA629D48659003FBA45 /* ContentView.swift in Sources */,
 				BCBD34C729F319C000FF87B5 /* ListWalletUIView+Strings.swift in Sources */,
 				BC0DC4EE29E629C70031BC30 /* WalletEnvironment.swift in Sources */,
 				BC5BF37F2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift in Sources */,
 				BC985AF32A02D342001C819B /* WalletShareAddUIView+Strings.swift in Sources */,
-				BCCF52F12A0AE81D008AFC1C /* InfoWalletShareRowUIView.swift in Sources */,
 				BC0DC4EC29E621C40031BC30 /* ListWalletUIView.swift in Sources */,
 				BCBD34CE29F3270300FF87B5 /* Wallet+Calculations.swift in Sources */,
 				BCF6EA8D29F748DA0048E652 /* CreateBrokerUIView.swift in Sources */,

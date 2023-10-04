@@ -54,7 +54,6 @@ extension WalletShare {
             if quantity <= 0 {
                 opened = false
             }
-            // TODO: Fix this operation later, incremental and only difference between buy and sell
             let earningValue = transaction.operationPrice?.doubleValue ?? 0.0 * transaction.amount
             if releaseEarnings == nil {
                 self.releaseEarnings = Decimal(0) as NSDecimalNumber

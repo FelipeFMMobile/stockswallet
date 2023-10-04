@@ -25,7 +25,6 @@ extension WalletApi: EndPoint {
     public func header() -> Header {
         switch self {
         default:
-            // TODO: Solve this better
             return ["API_KEY": "V1hQVE9AMTk4MA=="]
         }
     }

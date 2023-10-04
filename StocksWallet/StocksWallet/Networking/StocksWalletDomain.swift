@@ -26,14 +26,6 @@ public struct StocksWalletDomain: WebDomainProtocol {
         #if DEBUG
             return Domain.homolog.rawValue
         #endif
-//        if let bundleID = Bundle.main.bundleIdentifier {
-//            if bundleID.range(of: "homolog") != nil {
-//                return Domain.homolog.rawValue
-//            }
-//            if bundleID.range(of: "dev") != nil {
-//                return Domain.dev.rawValue
-//            }
-//        }
         return Domain.producao.rawValue
     }
 }
