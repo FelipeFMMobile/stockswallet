@@ -20,11 +20,11 @@ struct ListWalletRowUIView: View {
                         .font(.title2)
                         .lineLimit(2)
                     Spacer(minLength: 24)
-                    Text(wallet.currentAmount().toString(WalletEnvironment.currencyFormatter))
+                    Text(wallet.currentAmount().toString(Formatters.currency))
                         .font(.title2)
                 }.padding(.bottom, 8)
                 HStack {
-                    Text("\(str(Strings.originalAmount))\(wallet.originalAmount().toString(WalletEnvironment.currencyFormatter))")
+                    Text("\(str(Strings.originalAmount))\(wallet.originalAmount().toString(Formatters.currency))")
                     Spacer()
                     Text("\(wallet.broker?.name ?? "")")
                 }
@@ -37,11 +37,11 @@ struct ListWalletRowUIView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ListWalletRowUIView()
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-                .environmentObject(PersistenceController.walletPreview)
+                .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
+                .environmentObject(PreviewPersistence.walletPreview)
             ListWalletRowUIView()
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-                .environmentObject(PersistenceController.walletPreview)
+                .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
+                .environmentObject(PreviewPersistence.walletPreview)
         }.previewLayout(.fixed(width: 345, height: 90))
     }
 }

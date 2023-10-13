@@ -28,7 +28,9 @@
 		BC6DAC262A7D9D4B005FADE1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6DAC252A7D9D4B005FADE1 /* Router.swift */; };
 		BC6DAC2C2A7DAA5A005FADE1 /* IntroUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6DAC2B2A7DAA5A005FADE1 /* IntroUIView+Strings.swift */; };
 		BC76AEA12A02E98A00D30163 /* Share+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC76AEA02A02E98A00D30163 /* Share+Calculations.swift */; };
-		BC8AB7C529EF5E6A00919332 /* ConfirmationButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */; };
+		BC83E0862AD9D2120008DE4D /* PreviewPersistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E0852AD9D2120008DE4D /* PreviewPersistence.swift */; };
+		BC83E0882AD9E46E0008DE4D /* Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC83E0872AD9E46E0008DE4D /* Formatters.swift */; };
+		BC8AB7C529EF5E6A00919332 /* FormButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C429EF5E6A00919332 /* FormButtonView.swift */; };
 		BC8AB7C729EF6CF800919332 /* CreateWalletUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC8AB7C629EF6CF800919332 /* CreateWalletUIView+Strings.swift */; };
 		BC95B57E29ECA5C7009D3035 /* CreateWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */; };
 		BC985AEC2A02D1D6001C819B /* WalletShareEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC985AEB2A02D1D6001C819B /* WalletShareEnvironment.swift */; };
@@ -107,7 +109,9 @@
 		BC6DAC2B2A7DAA5A005FADE1 /* IntroUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "IntroUIView+Strings.swift"; sourceTree = "<group>"; };
 		BC6DAC2D2A7DAD8F005FADE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		BC76AEA02A02E98A00D30163 /* Share+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Share+Calculations.swift"; sourceTree = "<group>"; };
-		BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationButtonView.swift; sourceTree = "<group>"; };
+		BC83E0852AD9D2120008DE4D /* PreviewPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewPersistence.swift; sourceTree = "<group>"; };
+		BC83E0872AD9E46E0008DE4D /* Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatters.swift; sourceTree = "<group>"; };
+		BC8AB7C429EF5E6A00919332 /* FormButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButtonView.swift; sourceTree = "<group>"; };
 		BC8AB7C629EF6CF800919332 /* CreateWalletUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateWalletUIView+Strings.swift"; sourceTree = "<group>"; };
 		BC95B57D29ECA5C7009D3035 /* CreateWalletUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWalletUIView.swift; sourceTree = "<group>"; };
 		BC985AEB2A02D1D6001C819B /* WalletShareEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletShareEnvironment.swift; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 		BC49F49C2A1C15DC00226A71 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BC83E0872AD9E46E0008DE4D /* Formatters.swift */,
 				BC49F49D2A1C15F100226A71 /* Double+Extension.swift */,
 			);
 			path = Extensions;
@@ -266,7 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				BC6B8C532A098B65006F31AF /* ShareInfoView */,
-				BC8AB7C429EF5E6A00919332 /* ConfirmationButtonView.swift */,
+				BC8AB7C429EF5E6A00919332 /* FormButtonView.swift */,
 				BC5F75912A0852E1004DDF9C /* GenericError */,
 				BC6B8C542A098B84006F31AF /* TextFieldCurrencyView.swift */,
 				BC6B8C562A09904D006F31AF /* TextFieldDecimalView.swift */,
@@ -336,7 +341,6 @@
 				BC49F49C2A1C15DC00226A71 /* Extensions */,
 				BCEA2F262A05A35100131661 /* Networking */,
 				BC985AED2A02D231001C819B /* Models+Calculations */,
-				BC8AB7C329EF5E3F00919332 /* ViewsCommons */,
 				BCC178862ACCE94D004BCAEB /* Flows */,
 				BCA92AA729D4865A003FBA45 /* Assets.xcassets */,
 				BCA92AA929D4865A003FBA45 /* StocksWallet.entitlements */,
@@ -402,6 +406,7 @@
 		BCC178862ACCE94D004BCAEB /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				BC8AB7C329EF5E3F00919332 /* ViewsCommons */,
 				BCC1788B2ACCEA91004BCAEB /* ShareUpdate */,
 				BC6128D82A845928004B9658 /* Tutorials */,
 				BC985AEA2A02D1B8001C819B /* WalletShare */,
@@ -425,6 +430,7 @@
 			isa = PBXGroup;
 			children = (
 				BCA92AA029D48659003FBA45 /* Persistence.swift */,
+				BC83E0852AD9D2120008DE4D /* PreviewPersistence.swift */,
 				BCA92AA229D48659003FBA45 /* StocksWallet.xcdatamodeld */,
 			);
 			path = DataSource;
@@ -643,6 +649,7 @@
 				BCF6EA8B29F747260048E652 /* ListBrokerUIView+Strings.swift in Sources */,
 				BC4B2E092A01E1D30040AC2D /* Routes.swift in Sources */,
 				BCEA2F2F2A05A4EE00131661 /* StockModel.swift in Sources */,
+				BC83E0862AD9D2120008DE4D /* PreviewPersistence.swift in Sources */,
 				BC6128DA2A845945004B9658 /* WelcomeSwiftUIView.swift in Sources */,
 				BC4B2E072A01E1A40040AC2D /* Environments.swift in Sources */,
 				BCBD34CC29F31EEF00FF87B5 /* InfoWalletUIView+Strings.swift in Sources */,
@@ -653,7 +660,7 @@
 				BCEA2F252A059B5200131661 /* ShareInfoView+Strings.swift in Sources */,
 				BCBD34CA29F31E8B00FF87B5 /* InfoWalletUIView.swift in Sources */,
 				BCA224E829F20581007CF4E4 /* NavigationRouteView.swift in Sources */,
-				BC8AB7C529EF5E6A00919332 /* ConfirmationButtonView.swift in Sources */,
+				BC8AB7C529EF5E6A00919332 /* FormButtonView.swift in Sources */,
 				BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */,
 				BC6DAC262A7D9D4B005FADE1 /* Router.swift in Sources */,
 				BCEA2F2A2A05A40700131661 /* WalletApi.swift in Sources */,
@@ -665,6 +672,7 @@
 				BCEA2F2C2A05A47600131661 /* StocksWalletDomain.swift in Sources */,
 				BC6B8C592A099697006F31AF /* WalletShare+Calculations.swift in Sources */,
 				BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */,
+				BC83E0882AD9E46E0008DE4D /* Formatters.swift in Sources */,
 				BC49F49E2A1C15F100226A71 /* Double+Extension.swift in Sources */,
 				BCC1788A2ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift in Sources */,
 				BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */,

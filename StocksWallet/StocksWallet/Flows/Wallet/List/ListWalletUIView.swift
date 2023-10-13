@@ -81,7 +81,7 @@ struct ListWalletUIView: View {
 struct ListWalletUIView_Previews: PreviewProvider {
     static var previews: some View {
         ListWalletUIView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
             .environmentObject(WalletEnvironment())
     }
 }

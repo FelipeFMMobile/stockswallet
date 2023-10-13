@@ -58,24 +58,6 @@ class WalletEnvironment: ObservableObject {
         return formatter
     }()
 
-    // MARK: Formatters
-
-    // TODO: Move to a generic formatter property
-    static let currencyFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencyCode = "BRL"
-        return formatter
-    }()
-
-    static let decimalFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.maximumFractionDigits = 2
-        formatter.minimumFractionDigits = 2
-        return formatter
-    }()
-
     // MARK: Navigation
     func goToCreateView() {
         router.changeRoute(RoutePath(.wallet_creation))

@@ -61,10 +61,10 @@ struct EditWalletUIView: View {
                     }
                 }
             }
-            ConfirmationButtonView(
+            FormButtonView(
                 confirmationAlert: $confirmationAlert,
-                info: ConfirmationButtonView
-                    .Info(buttonTitle: str(Strings.buttonTitle),
+                info: FormButtonView
+                    .Info(title: str(Strings.buttonTitle),
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
                               enviroment.updateWattet(data: data,
@@ -86,8 +86,8 @@ struct EditWalletUIView: View {
 struct EditWalletUIView_Previews: PreviewProvider {
     static var previews: some View {
         EditWalletUIView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(PersistenceController.walletPreview)
+            .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
+            .environmentObject(PreviewPersistence.walletPreview)
             .environmentObject(WalletEnvironment())
     }
 }

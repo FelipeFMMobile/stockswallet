@@ -32,10 +32,10 @@ struct CreateBrokerUIView: View {
                         .keyboardType(.numbersAndPunctuation)
                 }
             }
-            ConfirmationButtonView(
+            FormButtonView(
                 confirmationAlert: $confirmationAlert,
-                info: ConfirmationButtonView
-                    .Info(buttonTitle: str(Strings.buttonTitle),
+                info: FormButtonView
+                    .Info(title: str(Strings.buttonTitle),
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
                               enviroment.createNewBroker(data: data)
@@ -52,7 +52,7 @@ struct CreateBrokerUIView: View {
 struct CreateBrokerUIView_Previews: PreviewProvider {
     static var previews: some View {
         CreateBrokerUIView()
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
             .environmentObject(BrokerEnvironment())
     }
 }

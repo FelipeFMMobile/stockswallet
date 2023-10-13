@@ -22,9 +22,9 @@ struct InfoWalletShareRowUIView: View {
                         .font(.title2)
                         .lineLimit(2)
                     Spacer()
-                    Text("\(share.amount ?? 0.0, formatter: WalletEnvironment.decimalFormatter) \(str(Strings.unitSymbol))")
+                    Text("\(share.amount ?? 0.0, formatter: Formatters.decimal) \(str(Strings.unitSymbol))")
                         .font(.title3)
-                    Text(share.share?.price ?? 0.0, formatter: WalletEnvironment.currencyFormatter)
+                    Text(share.share?.price ?? 0.0, formatter: Formatters.currency)
                         .font(.title2)
                         .redacted(reason: isUpdating ? .placeholder : [])
                 }.padding(.bottom, 8)
@@ -32,7 +32,7 @@ struct InfoWalletShareRowUIView: View {
                     VStack(alignment: .leading){
                         Text("\(str(Strings.buyPrice))")
                             .monospacedDigit()
-                        Text("\(share.stockBuyPrice ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                        Text("\(share.stockBuyPrice ?? 0.0, formatter: Formatters.currency)")
                             .monospacedDigit()
                     }
                     Spacer()
@@ -53,8 +53,8 @@ struct InfoWalletShareRowUIView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             InfoWalletShareRowUIView(isUpdating: .constant(false))
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-                .environmentObject(PersistenceController.walletPreview.walletShares?.allObjects.first as! WalletShare)
+                .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
+                .environmentObject(PreviewPersistence.walletPreview.walletShares?.allObjects.first as! WalletShare)
         }.previewLayout(.fixed(width: 345, height: 90))
     }
 }

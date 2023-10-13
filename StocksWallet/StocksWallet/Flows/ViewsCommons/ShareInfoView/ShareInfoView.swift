@@ -45,14 +45,14 @@ struct ShareInfoView: View {
                 VStack(alignment: .leading) {
                     Text("\(str(Strings.openPrice))")
                         .font(.caption)
-                    Text("\(share.open ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                    Text("\(share.open ?? 0.0, formatter: Formatters.currency)")
                         .font(.title2)
                 }
                 Spacer()
                 VStack(alignment: .leading) {
                     Text("\(str(Strings.marketPrice))")
                         .font(.caption)
-                    Text("\(share.price ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                    Text("\(share.price ?? 0.0, formatter: Formatters.currency)")
                         .font(.title2)
                         .bold()
                 }
@@ -61,14 +61,14 @@ struct ShareInfoView: View {
                 VStack(alignment: .leading) {
                     Text("\(str(Strings.maximumPrice))")
                         .font(.caption)
-                    Text("\(share.maximum ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                    Text("\(share.maximum ?? 0.0, formatter: Formatters.currency)")
                         .font(.title2)
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("\(str(Strings.variation))")
                         .font(.caption)
-                    Text("\(share.variation ?? 0.0, formatter: WalletEnvironment.decimalFormatter)%")
+                    Text("\(share.variation ?? 0.0, formatter: Formatters.decimal)%")
                         .font(.title2)
                         .bold(share.peformanceIndicator() > 0)
                         .italic(share.peformanceIndicator() < 0)
@@ -79,14 +79,14 @@ struct ShareInfoView: View {
                 VStack(alignment: .leading) {
                     Text("\(str(Strings.minimunPrice))")
                         .font(.caption)
-                    Text("\(share.minimum ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                    Text("\(share.minimum ?? 0.0, formatter: Formatters.currency)")
                         .font(.title2)
                 }
                 Spacer()
                 VStack(alignment: .trailing) {
                     Text("\(str(Strings.lastPrice))")
                         .font(.caption)
-                    Text("\(share.lastPrice ?? 0.0, formatter: WalletEnvironment.currencyFormatter)")
+                    Text("\(share.lastPrice ?? 0.0, formatter: Formatters.currency)")
                         .font(.title2)
                 }
             }
@@ -107,8 +107,8 @@ struct ShareInfoView_Previews: PreviewProvider {
             ShareInfoView(shareData: ShareInfoView.ShareData(action: { symbol in
                 debugPrint("get a symbol \(symbol)")
             }))
-            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-            .environmentObject(PersistenceController.sharePreview)
+            .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
+            .environmentObject(PreviewPersistence.sharePreview)
         }.padding(40)
     }
 }
