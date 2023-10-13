@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ConfirmationButtonView: View {
+struct FormButtonView: View {
     struct Info {
-        var buttonTitle: String
+        var title: String
         var alertTitle: String
         var alertMessage: String
         var action: () -> Void
@@ -21,7 +21,7 @@ struct ConfirmationButtonView: View {
             Button(action: {
                 confirmationAlert = !confirmationAlert
             }, label: {
-                Text(info.buttonTitle)
+                Text(info.title)
                     .frame(minWidth: 300.0,
                            alignment: .center)
                     .padding(8.0)
@@ -30,7 +30,7 @@ struct ConfirmationButtonView: View {
             .padding(24.0)
         }
         .alert(info.alertTitle, isPresented: $confirmationAlert) {
-            Button(info.buttonTitle) {
+            Button(info.title) {
                 info.action()
             }
             Button("NO", role: .cancel) {}
@@ -42,9 +42,9 @@ struct ConfirmationButtonView: View {
 
 struct ConfirmationButtonView_Previews: PreviewProvider {
     static var previews: some View {
-        ConfirmationButtonView(confirmationAlert: .constant(false),
-                               info: ConfirmationButtonView
-            .Info(buttonTitle: "CREATE WALLET",
+        FormButtonView(confirmationAlert: .constant(false),
+                               info: FormButtonView
+            .Info(title: "CREATE WALLET",
                   alertTitle: "Confirm?",
                   alertMessage: "Create wallet named",
                   action: {}))

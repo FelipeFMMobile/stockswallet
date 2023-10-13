@@ -25,12 +25,7 @@ extension Wallet {
 
     func peformanceIndicator() -> Int {
         let peformance = getPeformance()?.doubleValue ?? 0.0
-        if peformance > 0 {
-            return 1
-        } else if peformance < 0 {
-            return -1
-        }
-        return 0
+        return Int(peformance).signum()
     }
 
     func hasOriginalAmount() -> Bool {

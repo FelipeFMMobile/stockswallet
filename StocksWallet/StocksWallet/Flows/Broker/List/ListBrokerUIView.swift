@@ -69,7 +69,7 @@ struct ListBrokerUIView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             ListBrokerUIView()
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+                .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
                 .environmentObject(BrokerEnvironment())
         }
     }

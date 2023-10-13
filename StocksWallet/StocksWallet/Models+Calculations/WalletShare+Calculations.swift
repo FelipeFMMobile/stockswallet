@@ -31,7 +31,6 @@ extension WalletShare {
     private func calculationForTransaction(_ transaction: Transaction) {
         let type = WalletTransactionType(rawValue: transaction.type ?? "") ?? .unknown
         switch type {
-        // TODO: Fix types into static enum
         case .buy:
             amount = (amount ?? 0).adding(NSDecimalNumber(value: transaction.amount))
             if lastBuyDate == nil && !opened {
@@ -42,7 +41,6 @@ extension WalletShare {
             }
             lastBuyDate = transaction.transactionDate
             quantity += transaction.amount
-            // TODO: Calculate price middle buy, when more buy transactions are added
             calculateBuyMiddlePrice(transaction)
         case .sell:
             amount = amount?.subtracting(NSDecimalNumber(value: transaction.amount))
@@ -51,9 +49,7 @@ extension WalletShare {
             lastSellDate = transaction.transactionDate
             updatePeformance()
             quantity -= transaction.amount
-            if quantity <= 0 {
-                opened = false
-            }
+            opened = (quantity <= 0) ? false : true
             let earningValue = transaction.operationPrice?.doubleValue ?? 0.0 * transaction.amount
             if releaseEarnings == nil {
                 self.releaseEarnings = Decimal(0) as NSDecimalNumber

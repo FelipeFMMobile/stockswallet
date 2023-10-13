@@ -9,7 +9,7 @@ import XCTest
 @testable import StocksWallet
 
 final class Wallet_CalculationsTests: XCTestCase {
-    let context = PersistenceController.preview.container.viewContext
+    let context = PreviewPersistence.preview.container.viewContext
 
     private func createTransaction(type: String, price: Double, amount: Double) -> Transaction{
         let context = context
@@ -23,11 +23,6 @@ final class Wallet_CalculationsTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Given
-
-//        let walletShare2 = walletShare_stub()
-//        walletShare2.addTransaction(transaction)
-//        walletShare2.addTransaction(transaction2)
-//        walletShare2.wallet = wallet
     }
 
     func testUpdateCalculationsIsCorrect() throws {

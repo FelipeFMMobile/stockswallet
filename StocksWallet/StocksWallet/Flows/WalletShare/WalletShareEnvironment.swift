@@ -92,14 +92,6 @@ class WalletShareEnvironment: ObservableObject {
         return nil
     }
 
-//    private func findLocalWalletShare(_ share: Share) -> WalletShare? {
-//        let request: NSFetchRequest<WalletShare> = WalletShare.fetchRequest()
-//        if let shares = try? context.fetch(request) {
-//            return shares.first { $0.share == share }
-//        }
-//        return nil
-//    }
-
     private func findWalletShareInWallet(_ share: Share, in wallet: Wallet) -> WalletShare? {
         let walletShares = wallet.walletShares?.allObjects as? [WalletShare] ?? []
         return walletShares.first(where: { $0.share?.symbol == share.symbol })
@@ -107,8 +99,8 @@ class WalletShareEnvironment: ObservableObject {
 
     @discardableResult
     func createWalletTransaction(data: FormData, wallet: Wallet, share: Share) -> Bool {
-        let currencyFormatter = WalletEnvironment.currencyFormatter
-        let decimalFormatter = WalletEnvironment.decimalFormatter
+        let currencyFormatter = Formatters.currency
+        let decimalFormatter = Formatters.decimal
         let transaction = Transaction(context: context)
         transaction.type = data.operationType
         transaction.operationPrice = currencyFormatter.number(from: data.transactionPrice)?.decimalValue as? NSDecimalNumber
@@ -124,7 +116,6 @@ class WalletShareEnvironment: ObservableObject {
         walletShare.stopValue = currencyFormatter.number(from: data.stopPrice)?.decimalValue as? NSDecimalNumber
         walletShare.stopPercentage = Decimal(data.stopPercentage) as NSDecimalNumber
         walletShare.wallet = wallet
-        // TODO: Leave this more abstract, wich resposability ? model ?
         if wallet.firstOperationDate == nil {
             wallet.firstOperationDate = transaction.transactionDate
         }

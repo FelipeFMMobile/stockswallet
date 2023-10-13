@@ -25,7 +25,8 @@ struct WalletShareAddUIView: View {
                 // MARK: Stock Section
                 Section(header: Text(str(Strings.Fields.shareInfo))) {
                     HStack(alignment: .top) {
-                        ShareInfoView(shareData: ShareInfoView.ShareData(shareSymbol: data.shareSymbol, action: { symbol in
+                        ShareInfoView(shareData: ShareInfoView.ShareData(shareSymbol: data.shareSymbol, 
+                                                                         action: { symbol in
                             self.isLoading = true
                             self.searchSymbol(symbol: symbol)
                         }))
@@ -37,6 +38,7 @@ struct WalletShareAddUIView: View {
                             .opacity(isLoading ? 1 : 0)
                     }
                 }
+
                 // MARK: Transaction Section
                 Section(header: Text(str(Strings.Transaction.transactionTitle))) {
                     DatePicker(
@@ -85,7 +87,7 @@ struct WalletShareAddUIView: View {
                     }
                 }
                 
-                // MARK: Stop Section
+                // MARK: Goals Section
                 Section(header: Text(str(Strings.Stop.stopTitle))) {
                     DatePicker(
                         str(Strings.Stop.stopDate),
@@ -108,7 +110,7 @@ struct WalletShareAddUIView: View {
                         Spacer(minLength: 20.0)
                         Stepper(value: $data.stopPercentage,
                                 in: 0...100, step: 5) {
-                            Text("\(NSNumber(value:data.stopPercentage), formatter: WalletEnvironment.decimalFormatter) %")
+                            Text("\(NSNumber(value:data.stopPercentage), formatter: Formatters.decimal) %")
                         }
                     }
                     HStack {
@@ -123,13 +125,15 @@ struct WalletShareAddUIView: View {
                 }
                 
             }
-            ConfirmationButtonView(
+            FormButtonView(
                 confirmationAlert: $confirmationAlert,
-                info: ConfirmationButtonView
-                    .Info(buttonTitle: str(Strings.buttonTitle),
+                info: FormButtonView
+                    .Info(title: str(Strings.buttonTitle),
                           alertTitle: str(Strings.alertTitle),
                           alertMessage: str(Strings.alertDesc)) {
-                              environment.createWalletTransaction(data: data, wallet: wallet, share: environment.share)
+                              environment.createWalletTransaction(data: data, 
+                                                                  wallet: wallet, 
+                                                                  share: environment.share)
                               environment.goBack()
                           }
             )
@@ -155,9 +159,9 @@ struct WalletStockAddUIView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             WalletShareAddUIView()
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+                .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
                 .environmentObject(WalletShareEnvironment())
-                .environmentObject(PersistenceController.walletPreview)
+                .environmentObject(PreviewPersistence.walletPreview)
         }
     }
 }

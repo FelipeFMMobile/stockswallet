@@ -29,14 +29,14 @@ struct InfoWalletUIView: View {
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.originalAmount))")
                             .font(.caption)
-                        Text("\(wallet.originalAmount().toString(WalletEnvironment.currencyFormatter))")
+                        Text("\(wallet.originalAmount().toString(Formatters.decimal))")
                             .font(.title2)
                     }
                     Spacer()
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.currentAmount))")
                             .font(.caption)
-                        Text("\(wallet.currentAmount().toString(WalletEnvironment.currencyFormatter))")
+                        Text("\(wallet.currentAmount().toString(Formatters.currency))")
                             .font(.title2)
                             .bold()
                     }
@@ -45,14 +45,14 @@ struct InfoWalletUIView: View {
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.goalAmount))")
                             .font(.caption)
-                        Text("\(wallet.amountTarget ?? 0.0, formatter: WalletEnvironment.decimalFormatter)%")
+                        Text("\(wallet.amountTarget ?? 0.0, formatter: Formatters.decimal)%")
                             .font(.title2)
                     }
                     Spacer()
                     VStack(alignment: .leading) {
                         Text("\(str(Strings.gainAmount))")
                             .font(.caption)
-                        Text("\(wallet.getPeformance() ?? 0.0, formatter: WalletEnvironment.decimalFormatter)%")
+                        Text("\(wallet.getPeformance() ?? 0.0, formatter: Formatters.decimal)%")
                             .font(.title2)
                             .bold(wallet.peformanceIndicator() > 0)
                             .italic(wallet.peformanceIndicator() < 0)
@@ -170,8 +170,8 @@ struct InfoWalletUIView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
             InfoWalletUIView()
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-                .environmentObject(PersistenceController.walletPreview)
+                .environment(\.managedObjectContext, PreviewPersistence.preview.container.viewContext)
+                .environmentObject(PreviewPersistence.walletPreview)
                 .environmentObject(WalletEnvironment())
         }
     }

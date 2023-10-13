@@ -10,11 +10,6 @@ import CoreData
 extension Share {
     func peformanceIndicator() -> Int {
         let peformance = self.variation?.doubleValue ?? 0.0
-        if peformance > 0 {
-            return 1
-        } else if peformance < 0 {
-            return -1
-        }
-        return 0
+        return Int(peformance).signum()
     }
 }
