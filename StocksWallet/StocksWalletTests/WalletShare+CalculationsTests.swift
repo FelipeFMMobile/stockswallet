@@ -9,7 +9,7 @@ import XCTest
 @testable import StocksWallet
 
 final class WalletShare_CalculationsTests: XCTestCase {
-    let context = PersistenceController.preview.container.viewContext
+    let context = PreviewPersistence.preview.container.viewContext
 
     private func createTransaction(type: String, price: Double, amount: Double) -> Transaction{
         let context = context
@@ -150,7 +150,7 @@ final class WalletShare_CalculationsTests: XCTestCase {
 
     private func walletShare_stub() -> WalletShare {
         let walletShare = WalletShare(context: context)
-        walletShare.share = PersistenceController.sharePreview
+        walletShare.share = PreviewPersistence.sharePreview
         walletShare.stopDate = Date().addingTimeInterval(1800)
         walletShare.stopValue = Decimal(12.90) as NSDecimalNumber
         walletShare.stopPercentage = Decimal(10.00) as NSDecimalNumber
