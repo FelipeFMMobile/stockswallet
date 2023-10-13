@@ -4,6 +4,8 @@
 ![SwiftUI](https://img.shields.io/badge/SwiftUI-3.0-green.svg)
 ![Async/Await](https://img.shields.io/badge/Async%2FAwait-supported-blue.svg)
 ![Xcode](https://img.shields.io/badge/Xcode-14.3-purple.svg)
+![Bitrise](https://app.bitrise.io/app/3de466ba-6875-4139-800a-482731593599/status.svg?token=-donGc5xWpUyG1TVPEDnOA&branch=master)
+
 
 Welcome to StocksWallet, a Swift-based iOS application for tracking and managing your stock investments. This project utilizes cutting-edge technologies to provide a seamless and efficient user experience.
 
