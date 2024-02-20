@@ -17,7 +17,7 @@ struct WelcomeSwiftUIView: View {
     @State var tutorial1Text: String = ""
     var body: some View {
         VStack {
-            Spacer(minLength: 20.0)
+            Spacer(minLength: 10.0)
             VStack(spacing: 5.0) {
                 HStack(alignment: .center) {
                     Image(systemName: "dollarsign.circle")
@@ -31,7 +31,7 @@ struct WelcomeSwiftUIView: View {
                         .animation(.easeOut(duration: 1).delay(1.5), value: showDetail)
                     
                 }
-                HStack(alignment: .bottom) {
+                HStack(alignment: .bottom, spacing: 4) {
                     Text(str(Strings.nameTitle))
                         .font(.largeTitle)
                     Text(str(Strings.nameDesc))
@@ -41,26 +41,29 @@ struct WelcomeSwiftUIView: View {
             .offset(ySize)
             .animation(.easeOut(duration: 1).delay(1.6),
                        value: ySize)
-            VStack(spacing: 20.0) {
+            VStack(alignment: .leading, spacing: 20.0) {
                 Text(wellComeText)
-                    .font(.title2).fontWeight(.semibold)
+                    .font(.title3)
+                    .multilineTextAlignment(.leading)
                     .offset(yTextSize)
                     .opacity(showDetail ? 1: 0)
                     .animation(.easeIn(duration: 1.5).delay(1.8),
                                value: showDetail)
-                VStack(spacing: 20.0) {
+                VStack(alignment: .leading, spacing: 4.0) {
                     Text(str(Strings.tutorial1))
                         .font(.body)
-                        .foregroundColor(Color(UIColor.darkGray))
+                        .foregroundColor(Color(ColorResource.darkGray))
                         .offset(yTextSize)
                         .opacity(showTutorial ? 1: 0)
+                        .multilineTextAlignment(.leading)
                         .animation(.easeIn(duration: 1.5).delay(6.0),
                                    value: showTutorial)
                     Text(str(Strings.tutorial2))
                         .font(.body)
                         .offset(yTextSize)
-                        .foregroundColor(Color(UIColor.darkGray))
+                        .foregroundColor(Color(ColorResource.darkGray))
                         .opacity(showTutorial ? 1: 0)
+                        .multilineTextAlignment(.leading)
                         .animation(.easeIn(duration: 1.5).delay(6.5),
                                    value: showTutorial)
                 }
@@ -74,7 +77,6 @@ struct WelcomeSwiftUIView: View {
                 .opacity(showTutorial ? 1: 0)
                 .animation(.easeIn(duration: 1.5).delay(7.0),
                            value: showTutorial)
-                .padding(10.0)
             }.padding(40.0)
         }.task {
             withAnimation {

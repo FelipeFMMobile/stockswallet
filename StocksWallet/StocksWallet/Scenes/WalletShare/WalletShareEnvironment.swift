@@ -39,7 +39,7 @@ class WalletShareEnvironment: ObservableObject {
 
     @MainActor
     func getStock(symbol: String) async throws {
-        self.share = try await stockInfo(symbol: symbol)
+        self.share = try await stockInfo(symbol: symbol.trimmingCharacters(in: .whitespaces))
     }
 
     // MARK: Requests

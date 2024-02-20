@@ -7,7 +7,7 @@
 
 extension InfoWalletUIView: StringsView {
     enum Strings: String, RawRepresentable {
-        case originalAmount = "Original Value"
+        case originalAmount = "Opened Value"
         case currentAmount = "Current Value"
         case goalAmount = "Goal"
         case gainAmount = "Peformance"

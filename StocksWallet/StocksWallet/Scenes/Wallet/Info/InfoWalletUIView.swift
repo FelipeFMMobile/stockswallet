@@ -11,7 +11,7 @@ struct InfoWalletUIView: View {
     @EnvironmentObject var wallet: Wallet
     @EnvironmentObject var enviroment: WalletEnvironment
     @StateObject var sharesUpdateTimer = SharesUpdateTimer()
-    @State var openedInfo = true
+    @State var openedInfo = false
     var body: some View {
         List {
             // MARK: Wallet
@@ -20,6 +20,7 @@ struct InfoWalletUIView: View {
                        spacing: 8.0) {
                     Text(wallet.name ?? "")
                         .font(.title)
+                        .foregroundStyle(Color.accentColor)
                     Text(wallet.information ?? "")
                         .font(.body)
                         .lineLimit(0)

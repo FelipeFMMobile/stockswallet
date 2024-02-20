@@ -9,7 +9,7 @@ import Foundation
 
 class SharesUpdateTimer: ObservableObject {
     private var timer: Timer?
-    private let interval: TimeInterval = 5.0
+    private let interval: TimeInterval = 20.0
     private let shareUpdate = SharesUpdate()
     private var task: Task<Void, Error>?
     @Published var isLoading: Bool = false
@@ -18,6 +18,7 @@ class SharesUpdateTimer: ObservableObject {
         timer = Timer.scheduledTimer(timeInterval: interval, target: self,
                                      selector: #selector(timerFired),
                                      userInfo: nil, repeats: true)
+        timerFired()
     }
 
     @objc func timerFired() {

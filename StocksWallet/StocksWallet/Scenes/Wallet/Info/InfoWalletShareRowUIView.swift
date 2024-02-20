@@ -20,14 +20,29 @@ struct InfoWalletShareRowUIView: View {
                 HStack(alignment: .bottom) {
                     Text(share.share?.symbol ?? "")
                         .font(.title2)
+                        .bold()
                         .lineLimit(2)
                     Spacer()
-                    Text("\(share.amount ?? 0.0, formatter: Formatters.decimal) \(str(Strings.unitSymbol))")
-                        .font(.title3)
                     Text(share.share?.price ?? 0.0, formatter: Formatters.currency)
                         .font(.title2)
+                        .bold()
                         .redacted(reason: isUpdating ? .placeholder : [])
-                }.padding(.bottom, 8)
+                }
+                HStack(spacing: 2.0) {
+                    Text("\(share.amount ?? 0.0, formatter: Formatters.decimal)")
+                        .font(.callout)
+                    Text("\(str(Strings.unitSymbol))")
+                        .font(.callout)
+                    Spacer()
+                    if let share = share.share {
+                        let indicator = share.peformanceIndicator()
+                        Text("\(share.variation ?? 0.0, formatter: Formatters.decimal)%")
+                            .font(.callout)
+                            .bold(indicator > 0)
+                            .italic(indicator < 0)
+                            .foregroundColor(indicator > 0 ? .accentColor : .red)
+                    }
+                }.padding(.bottom, 2)
                 HStack {
                     VStack(alignment: .leading){
                         Text("\(str(Strings.buyPrice))")
@@ -63,6 +78,6 @@ extension InfoWalletShareRowUIView: StringsView {
     enum Strings: String, RawRepresentable {
         case buyPrice = "buy: "
         case lastDate = "last date: "
-        case unitSymbol = "un"
+        case unitSymbol = "units"
     }
 }

@@ -14,18 +14,22 @@ public struct ServerConfig {
 }
 
 public struct StocksWalletDomain: WebDomainProtocol {
-    enum Domain: String {
-    case production = ""
-    case homolog = "http://tradewallet-stage-alb-129607103.us-east-1.elb.amazonaws.com/"
-    case dev = "https://private-388c00-fmmobile.apiary-mock.com/"
+    struct Domain {
+        static func prod() -> String {
+            return RemoteConfigSDK.shared.getValueFor("prod_domain") ?? ""
+        }
+
+        static func debug() -> String {
+            return RemoteConfigSDK.shared.getValueFor("debug_domain") ?? ""
+        }
     }
     
     public init() { }
 
     public func domainForBundle() -> String {
         #if DEBUG
-            return Domain.dev.rawValue
+        return Domain.debug()
         #endif
-        return Domain.production.rawValue
+        return Domain.prod()
     }
 }

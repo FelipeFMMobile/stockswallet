@@ -10,7 +10,12 @@ import SwiftUI
 @main
 struct StocksWalletApp: App {
     let persistenceController = PersistenceController.shared
-    
+    let initializer = AppLauchInitializer()
+
+    init() {
+        initializer.initializeFirebase()
+    }
+
     var body: some Scene {
         WindowGroup {
             IntroUIView()

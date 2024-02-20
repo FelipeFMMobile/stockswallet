@@ -19,9 +19,12 @@ struct ListWalletRowUIView: View {
                     Text(wallet.name ?? "")
                         .font(.title2)
                         .lineLimit(2)
+                        .foregroundStyle(Color.accentColor)
                     Spacer(minLength: 24)
-                    Text(wallet.currentAmount().toString(Formatters.currency))
+                    Text(wallet.currentAmount()
+                        .toString(Formatters.currency))
                         .font(.title2)
+                        .bold()
                 }.padding(.bottom, 8)
                 HStack {
                     Text("\(str(Strings.originalAmount))\(wallet.originalAmount().toString(Formatters.currency))")
@@ -48,6 +51,6 @@ struct ListWalletRowUIView_Previews: PreviewProvider {
 
 extension ListWalletRowUIView: StringsView {
     enum Strings: String, RawRepresentable {
-        case originalAmount = "Original: "
+        case originalAmount = "opened: "
     }
 }

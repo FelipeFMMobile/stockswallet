@@ -8,7 +8,7 @@
 import CoreData
 
 actor SharesUpdate {
-    let context = PersistenceController.shared.container.newBackgroundContext()
+    private let context = PersistenceController.shared.container.newBackgroundContext()
     private var service = WalletService()
     private let request: NSFetchRequest<Share> = Share.fetchRequest()
     private(set) var loadingError: Error?

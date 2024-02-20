@@ -22,5 +22,4 @@ struct Formatters {
         formatter.minimumFractionDigits = 2
         return formatter
     }()
-
 }
