@@ -16,12 +16,16 @@
 		BC49F4A22A1C258600226A71 /* SharesUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC49F4A12A1C258600226A71 /* SharesUpdate.swift */; };
 		BC4B2E072A01E1A40040AC2D /* Environments.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B2E062A01E1A40040AC2D /* Environments.swift */; };
 		BC4B2E092A01E1D30040AC2D /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B2E082A01E1D30040AC2D /* Routes.swift */; };
+		BC4DCBFA2B83AFC300F5FC69 /* InfoWalletShareRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4DCBF92B83AFC300F5FC69 /* InfoWalletShareRowUIView.swift */; };
 		BC4FD85D2A78862400B4A50D /* IntroUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4FD85C2A78862400B4A50D /* IntroUIView.swift */; };
 		BC5BF37F2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5BF37E2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift */; };
 		BC5F75902A0852D6004DDF9C /* GenericErrorUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F758F2A0852D6004DDF9C /* GenericErrorUIView.swift */; };
 		BC5F75932A0852F5004DDF9C /* GenericErrorUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC5F75922A0852F5004DDF9C /* GenericErrorUIView+Strings.swift */; };
 		BC6128DA2A845945004B9658 /* WelcomeSwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6128D92A845945004B9658 /* WelcomeSwiftUIView.swift */; };
 		BC6128DC2A845971004B9658 /* WelcomeSwiftUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6128DB2A845971004B9658 /* WelcomeSwiftUIView+Strings.swift */; };
+		BC65480F2B82C64E00CB0D29 /* AppLauchInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC65480E2B82C64E00CB0D29 /* AppLauchInitializer.swift */; };
+		BC6548122B82C77200CB0D29 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6548112B82C77200CB0D29 /* CloudKit.framework */; };
+		BC6548152B82C7F900CB0D29 /* RemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6548142B82C7F900CB0D29 /* RemoteConfig.swift */; };
 		BC6B8C552A098B84006F31AF /* TextFieldCurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B8C542A098B84006F31AF /* TextFieldCurrencyView.swift */; };
 		BC6B8C572A09904D006F31AF /* TextFieldDecimalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B8C562A09904D006F31AF /* TextFieldDecimalView.swift */; };
 		BC6B8C592A099697006F31AF /* WalletShare+Calculations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC6B8C582A099697006F31AF /* WalletShare+Calculations.swift */; };
@@ -55,7 +59,6 @@
 		BCBD34D129F33C9800FF87B5 /* EditWalletUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34D029F33C9800FF87B5 /* EditWalletUIView.swift */; };
 		BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */; };
 		BCC178882ACCE9AF004BCAEB /* ListBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC178872ACCE9AF004BCAEB /* ListBrokerUIView.swift */; };
-		BCC1788A2ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC178892ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift */; };
 		BCC3F3522A0EC64F0088D39E /* Wallet+CalculationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCC3F3512A0EC64F0088D39E /* Wallet+CalculationsTests.swift */; };
 		BCEA2F232A059A2B00131661 /* ShareInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F222A059A2B00131661 /* ShareInfoView.swift */; };
 		BCEA2F252A059B5200131661 /* ShareInfoView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCEA2F242A059B5100131661 /* ShareInfoView+Strings.swift */; };
@@ -67,6 +70,9 @@
 		BCF6EA8B29F747260048E652 /* ListBrokerUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */; };
 		BCF6EA8D29F748DA0048E652 /* CreateBrokerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */; };
 		BCF6EA9129F749310048E652 /* CreateBrokerUIView+Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */; };
+		BCF9A75B2B75AC74006084EE /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = BCF9A75A2B75AC74006084EE /* FirebaseCrashlytics */; };
+		BCF9A75D2B75AC74006084EE /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCF9A75C2B75AC74006084EE /* FirebaseRemoteConfigSwift */; };
+		BCF9A75F2B75ACDA006084EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BCF9A75E2B75ACDA006084EE /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,12 +102,16 @@
 		BC49F4A12A1C258600226A71 /* SharesUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharesUpdate.swift; sourceTree = "<group>"; };
 		BC4B2E062A01E1A40040AC2D /* Environments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environments.swift; sourceTree = "<group>"; };
 		BC4B2E082A01E1D30040AC2D /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		BC4DCBF92B83AFC300F5FC69 /* InfoWalletShareRowUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoWalletShareRowUIView.swift; sourceTree = "<group>"; };
 		BC4FD85C2A78862400B4A50D /* IntroUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroUIView.swift; sourceTree = "<group>"; };
 		BC5BF37E2A1D7EE300FCE1E1 /* SharesUpdateTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SharesUpdateTimer.swift; sourceTree = "<group>"; };
 		BC5F758F2A0852D6004DDF9C /* GenericErrorUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericErrorUIView.swift; sourceTree = "<group>"; };
 		BC5F75922A0852F5004DDF9C /* GenericErrorUIView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GenericErrorUIView+Strings.swift"; sourceTree = "<group>"; };
 		BC6128D92A845945004B9658 /* WelcomeSwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeSwiftUIView.swift; sourceTree = "<group>"; };
 		BC6128DB2A845971004B9658 /* WelcomeSwiftUIView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WelcomeSwiftUIView+Strings.swift"; sourceTree = "<group>"; };
+		BC65480E2B82C64E00CB0D29 /* AppLauchInitializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLauchInitializer.swift; sourceTree = "<group>"; };
+		BC6548112B82C77200CB0D29 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS17.2.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
+		BC6548142B82C7F900CB0D29 /* RemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfig.swift; sourceTree = "<group>"; };
 		BC6B8C542A098B84006F31AF /* TextFieldCurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCurrencyView.swift; sourceTree = "<group>"; };
 		BC6B8C562A09904D006F31AF /* TextFieldDecimalView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldDecimalView.swift; sourceTree = "<group>"; };
 		BC6B8C582A099697006F31AF /* WalletShare+Calculations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WalletShare+Calculations.swift"; sourceTree = "<group>"; };
@@ -140,7 +150,6 @@
 		BCBD34D029F33C9800FF87B5 /* EditWalletUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditWalletUIView.swift; sourceTree = "<group>"; };
 		BCBD34D229F33CA200FF87B5 /* EditWalletUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EditWalletUIView+Strings.swift"; sourceTree = "<group>"; };
 		BCC178872ACCE9AF004BCAEB /* ListBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListBrokerUIView.swift; sourceTree = "<group>"; };
-		BCC178892ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoWalletShareRowUIView.swift; path = StocksWallet/Flows/Wallet/InfoWalletShareRowUIView.swift; sourceTree = SOURCE_ROOT; };
 		BCC3F3512A0EC64F0088D39E /* Wallet+CalculationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Wallet+CalculationsTests.swift"; sourceTree = "<group>"; };
 		BCEA2F222A059A2B00131661 /* ShareInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareInfoView.swift; sourceTree = "<group>"; };
 		BCEA2F242A059B5100131661 /* ShareInfoView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShareInfoView+Strings.swift"; sourceTree = "<group>"; };
@@ -152,6 +161,7 @@
 		BCF6EA8A29F747260048E652 /* ListBrokerUIView+Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ListBrokerUIView+Strings.swift"; sourceTree = "<group>"; };
 		BCF6EA8C29F748DA0048E652 /* CreateBrokerUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateBrokerUIView.swift; sourceTree = "<group>"; };
 		BCF6EA9029F749310048E652 /* CreateBrokerUIView+Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CreateBrokerUIView+Strings.swift"; sourceTree = "<group>"; };
+		BCF9A75E2B75ACDA006084EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +169,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCF9A75D2B75AC74006084EE /* FirebaseRemoteConfigSwift in Frameworks */,
+				BC6548122B82C77200CB0D29 /* CloudKit.framework in Frameworks */,
 				BCA92AD429D489A1003FBA45 /* SwiftApiSDK in Frameworks */,
+				BCF9A75B2B75AC74006084EE /* FirebaseCrashlytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,13 +262,29 @@
 			path = GenericError;
 			sourceTree = "<group>";
 		};
-		BC6128D82A845928004B9658 /* Tutorials */ = {
+		BC6128D82A845928004B9658 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
 				BC6128D92A845945004B9658 /* WelcomeSwiftUIView.swift */,
 				BC6128DB2A845971004B9658 /* WelcomeSwiftUIView+Strings.swift */,
 			);
-			path = Tutorials;
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		BC6548102B82C77200CB0D29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC6548112B82C77200CB0D29 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC6548132B82C7ED00CB0D29 /* SDKs */ = {
+			isa = PBXGroup;
+			children = (
+				BC6548142B82C7F900CB0D29 /* RemoteConfig.swift */,
+			);
+			path = SDKs;
 			sourceTree = "<group>";
 		};
 		BC6B8C532A098B65006F31AF /* ShareInfoView */ = {
@@ -313,11 +342,13 @@
 			children = (
 				BC9F8A942A0C3351001BD2BD /* StocksWallet.xctestplan */,
 				BC23CDE129DB48D600E276A5 /* README.md */,
+				BCF9A75E2B75ACDA006084EE /* GoogleService-Info.plist */,
 				BCA92A9D29D48659003FBA45 /* StocksWallet */,
 				BCA92AB429D4865A003FBA45 /* StocksWalletTests */,
 				BCA92ABE29D4865A003FBA45 /* StocksWalletUITests */,
 				BCA92ACE29D48881003FBA45 /* SupportingFiles */,
 				BCA92A9C29D48659003FBA45 /* Products */,
+				BC6548102B82C77200CB0D29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -334,14 +365,16 @@
 		BCA92A9D29D48659003FBA45 /* StocksWallet */ = {
 			isa = PBXGroup;
 			children = (
+				BC6548132B82C7ED00CB0D29 /* SDKs */,
 				BCA92A9E29D48659003FBA45 /* StocksWalletApp.swift */,
+				BC65480E2B82C64E00CB0D29 /* AppLauchInitializer.swift */,
 				BCC1788C2ACCEAAC004BCAEB /* DataSource */,
 				BC6DAC2D2A7DAD8F005FADE1 /* Info.plist */,
 				BC4B2E0A2A01E1F00040AC2D /* Navigation */,
 				BC49F49C2A1C15DC00226A71 /* Extensions */,
 				BCEA2F262A05A35100131661 /* Networking */,
 				BC985AED2A02D231001C819B /* Models+Calculations */,
-				BCC178862ACCE94D004BCAEB /* Flows */,
+				BCC178862ACCE94D004BCAEB /* Scenes */,
 				BCA92AA729D4865A003FBA45 /* Assets.xcassets */,
 				BCA92AA929D4865A003FBA45 /* StocksWallet.entitlements */,
 				BCA92AAA29D4865A003FBA45 /* Preview Content */,
@@ -387,8 +420,8 @@
 		BCBD34C829F31E4200FF87B5 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				BCC178892ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift */,
 				BCBD34C929F31E8B00FF87B5 /* InfoWalletUIView.swift */,
+				BC4DCBF92B83AFC300F5FC69 /* InfoWalletShareRowUIView.swift */,
 				BCBD34CB29F31EEF00FF87B5 /* InfoWalletUIView+Strings.swift */,
 			);
 			path = Info;
@@ -403,18 +436,18 @@
 			path = Edition;
 			sourceTree = "<group>";
 		};
-		BCC178862ACCE94D004BCAEB /* Flows */ = {
+		BCC178862ACCE94D004BCAEB /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				BC8AB7C329EF5E3F00919332 /* ViewsCommons */,
 				BCC1788B2ACCEA91004BCAEB /* ShareUpdate */,
-				BC6128D82A845928004B9658 /* Tutorials */,
+				BC6128D82A845928004B9658 /* Welcome */,
 				BC985AEA2A02D1B8001C819B /* WalletShare */,
 				BC0DC4E829E621110031BC30 /* Wallet */,
 				BCF6EA8529F744920048E652 /* Broker */,
 				BC4FD85B2A78860F00B4A50D /* Intro */,
 			);
-			path = Flows;
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		BCC1788B2ACCEA91004BCAEB /* ShareUpdate */ = {
@@ -503,6 +536,8 @@
 			name = StocksWallet;
 			packageProductDependencies = (
 				BCA92AD329D489A1003FBA45 /* SwiftApiSDK */,
+				BCF9A75A2B75AC74006084EE /* FirebaseCrashlytics */,
+				BCF9A75C2B75AC74006084EE /* FirebaseRemoteConfigSwift */,
 			);
 			productName = StocksWallet;
 			productReference = BCA92A9B29D48659003FBA45 /* StocksWallet.app */;
@@ -578,6 +613,7 @@
 			mainGroup = BCA92A9229D48659003FBA45;
 			packageReferences = (
 				BCA92AD229D489A1003FBA45 /* XCRemoteSwiftPackageReference "SwiftApiSDK" */,
+				BCF9A7592B75AC73006084EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = BCA92A9C29D48659003FBA45 /* Products */;
 			projectDirPath = "";
@@ -597,6 +633,7 @@
 			files = (
 				BCA92AD029D488A5003FBA45 /* .swiftlint.yml in Resources */,
 				BCA92AAC29D4865A003FBA45 /* Preview Assets.xcassets in Resources */,
+				BCF9A75F2B75ACDA006084EE /* GoogleService-Info.plist in Resources */,
 				BC23CDE229DB48D600E276A5 /* README.md in Resources */,
 				BCA92AA829D4865A003FBA45 /* Assets.xcassets in Resources */,
 			);
@@ -658,7 +695,9 @@
 				BCEA2F282A05A36700131661 /* WalletService.swift in Sources */,
 				BC8AB7C729EF6CF800919332 /* CreateWalletUIView+Strings.swift in Sources */,
 				BCEA2F252A059B5200131661 /* ShareInfoView+Strings.swift in Sources */,
+				BC4DCBFA2B83AFC300F5FC69 /* InfoWalletShareRowUIView.swift in Sources */,
 				BCBD34CA29F31E8B00FF87B5 /* InfoWalletUIView.swift in Sources */,
+				BC6548152B82C7F900CB0D29 /* RemoteConfig.swift in Sources */,
 				BCA224E829F20581007CF4E4 /* NavigationRouteView.swift in Sources */,
 				BC8AB7C529EF5E6A00919332 /* FormButtonView.swift in Sources */,
 				BCA92A9F29D48659003FBA45 /* StocksWalletApp.swift in Sources */,
@@ -674,7 +713,6 @@
 				BC09F6B429E8CA4A009DAF3D /* ListWalletRowUIView.swift in Sources */,
 				BC83E0882AD9E46E0008DE4D /* Formatters.swift in Sources */,
 				BC49F49E2A1C15F100226A71 /* Double+Extension.swift in Sources */,
-				BCC1788A2ACCEA04004BCAEB /* InfoWalletShareRowUIView.swift in Sources */,
 				BCBD34D329F33CA200FF87B5 /* EditWalletUIView+Strings.swift in Sources */,
 				BC4FD85D2A78862400B4A50D /* IntroUIView.swift in Sources */,
 				BCA92AA129D48659003FBA45 /* Persistence.swift in Sources */,
@@ -682,6 +720,7 @@
 				BC985AEC2A02D1D6001C819B /* WalletShareEnvironment.swift in Sources */,
 				BC49F4A02A1C170700226A71 /* WalletTransactionType.swift in Sources */,
 				BCBD34D129F33C9800FF87B5 /* EditWalletUIView.swift in Sources */,
+				BC65480F2B82C64E00CB0D29 /* AppLauchInitializer.swift in Sources */,
 				BC6B8C572A09904D006F31AF /* TextFieldDecimalView.swift in Sources */,
 				BCBD34C729F319C000FF87B5 /* ListWalletUIView+Strings.swift in Sources */,
 				BC0DC4EE29E629C70031BC30 /* WalletEnvironment.swift in Sources */,
@@ -855,7 +894,7 @@
 				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
 				DEVELOPMENT_TEAM = 9YZYY9PGW5;
@@ -880,14 +919,15 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.1;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.fmmobile.stockswallet;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.fmmobile.stockswallet.debug;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -899,7 +939,7 @@
 				CODE_SIGN_ENTITLEMENTS = StocksWallet/StocksWallet.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 9;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"StocksWallet/Preview Content\"";
 				DEVELOPMENT_TEAM = 9YZYY9PGW5;
@@ -928,10 +968,11 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -1085,6 +1126,14 @@
 				kind = branch;
 			};
 		};
+		BCF9A7592B75AC73006084EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = exactVersion;
+				version = 10.21.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1097,6 +1146,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BCA92AD529D48B49003FBA45 /* XCRemoteSwiftPackageReference "SwiftLint" */;
 			productName = "plugin:SwiftLintPlugin";
+		};
+		BCF9A75A2B75AC74006084EE /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF9A7592B75AC73006084EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		BCF9A75C2B75AC74006084EE /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCF9A7592B75AC73006084EE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

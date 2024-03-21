@@ -16,6 +16,7 @@ struct ListWalletUIView: View {
         sortDescriptors: WalletEnvironment.sortDescriptorList,
         animation: .default)
     var wallets: FetchedResults<Wallet>
+    private let shareUpdate = SharesUpdate()
     var body: some View {
             List {
                 Section {
@@ -74,6 +75,7 @@ struct ListWalletUIView: View {
                         presented = true
                     }
                 }
+                try? await shareUpdate.getUpdatedShares()
             }
     }
 }

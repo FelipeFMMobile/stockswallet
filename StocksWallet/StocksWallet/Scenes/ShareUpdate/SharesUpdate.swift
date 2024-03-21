@@ -8,7 +8,7 @@
 import CoreData
 
 actor SharesUpdate {
-    let context = PersistenceController.shared.container.newBackgroundContext()
+    private let context = PersistenceController.shared.container.newBackgroundContext()
     private var service = WalletService()
     private let request: NSFetchRequest<Share> = Share.fetchRequest()
     private(set) var loadingError: Error?
@@ -47,6 +47,7 @@ actor SharesUpdate {
                 let wallets = Array(share.walletShare as? Set<WalletShare> ?? [])
                 wallets.forEach { wallet in
                     wallet.lastUpdateDate = share.updatedDate
+                    wallet.wallet?.lastUpdate = share.updatedDate
                 }
             }
         }

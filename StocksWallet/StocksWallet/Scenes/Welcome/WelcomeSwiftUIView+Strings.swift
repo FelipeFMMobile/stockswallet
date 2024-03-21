@@ -10,7 +10,7 @@ extension WelcomeSwiftUIView: StringsView {
         case nameTitle = "Stocks"
         case nameDesc = "Wallet"
         case welcomeText = "This is your Wallet to hold your investments annotation!"
-        case tutorial1 = "Start by creating your first wallet, and add stocks to it"
+        case tutorial1 = "Start by creating your first wallet, and add stocks to it."
         case tutorial2 = "The value will be updated, and all calculations of your peformance will be easy on your hand!"
         case tutorial3 = "Enjoy"
     }
