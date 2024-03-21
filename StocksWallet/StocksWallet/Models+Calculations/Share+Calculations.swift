@@ -8,8 +8,9 @@
 import CoreData
 
 extension Share {
-    func peformanceIndicator() -> Int {
+    /// return true if above 0.0 otherwise false (negative)
+    func peformanceIndicator() -> Bool {
         let peformance = self.variation?.doubleValue ?? 0.0
-        return Int(peformance).signum()
+        return peformance > 0.0 ? true : false
     }
 }

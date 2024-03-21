@@ -55,9 +55,9 @@ struct InfoWalletUIView: View {
                             .font(.caption)
                         Text("\(wallet.getPeformance() ?? 0.0, formatter: Formatters.decimal)%")
                             .font(.title2)
-                            .bold(wallet.peformanceIndicator() > 0)
-                            .italic(wallet.peformanceIndicator() < 0)
-                            .foregroundColor(wallet.peformanceIndicator() > 0 ? .green : .red)
+                            .bold(wallet.peformanceIndicator() > Int(0.0))
+                            .italic(wallet.peformanceIndicator() < Int(0.0))
+                            .foregroundColor(wallet.peformanceIndicator() > Int(0.0) ? .green : .red)
                         
                     }
                     .opacity(wallet.hasOriginalAmount() ? 1 : 0)

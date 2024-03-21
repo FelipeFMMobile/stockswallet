@@ -28,19 +28,25 @@ struct InfoWalletShareRowUIView: View {
                         .bold()
                         .redacted(reason: isUpdating ? .placeholder : [])
                 }
-                HStack(spacing: 2.0) {
+                HStack(alignment: .lastTextBaseline) {
                     Text("\(share.amount ?? 0.0, formatter: Formatters.decimal)")
                         .font(.callout)
                     Text("\(str(Strings.unitSymbol))")
                         .font(.callout)
                     Spacer()
                     if let share = share.share {
+                        HStack(spacing: 2.0) {
+                            Text("\(str(Strings.openPrice))")
+                                .font(.caption)
+                            Text("\(share.open ?? 0.0, formatter: Formatters.currency)")
+                                .font(.caption)
+                        }
                         let indicator = share.peformanceIndicator()
                         Text("\(share.variation ?? 0.0, formatter: Formatters.decimal)%")
                             .font(.callout)
-                            .bold(indicator > 0)
-                            .italic(indicator < 0)
-                            .foregroundColor(indicator > 0 ? .accentColor : .red)
+                            .bold(indicator)
+                            .italic(indicator)
+                            .foregroundColor(indicator ? .accentColor : .red)
                     }
                 }.padding(.bottom, 2)
                 HStack {
@@ -79,5 +85,6 @@ extension InfoWalletShareRowUIView: StringsView {
         case buyPrice = "buy: "
         case lastDate = "last date: "
         case unitSymbol = "units"
+        case openPrice = "open:"
     }
 }

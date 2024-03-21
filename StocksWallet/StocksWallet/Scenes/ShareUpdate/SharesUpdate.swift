@@ -47,6 +47,7 @@ actor SharesUpdate {
                 let wallets = Array(share.walletShare as? Set<WalletShare> ?? [])
                 wallets.forEach { wallet in
                     wallet.lastUpdateDate = share.updatedDate
+                    wallet.wallet?.lastUpdate = share.updatedDate
                 }
             }
         }

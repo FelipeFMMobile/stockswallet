@@ -70,9 +70,9 @@ struct ShareInfoView: View {
                         .font(.caption)
                     Text("\(share.variation ?? 0.0, formatter: Formatters.decimal)%")
                         .font(.title2)
-                        .bold(share.peformanceIndicator() > 0)
-                        .italic(share.peformanceIndicator() < 0)
-                        .foregroundColor(share.peformanceIndicator() > 0 ? .accentColor : .red)
+                        .bold(share.peformanceIndicator())
+                        .italic(share.peformanceIndicator())
+                        .foregroundColor(share.peformanceIndicator() ? .accentColor : .red)
                 }
             }
             HStack(spacing: 0.0) {

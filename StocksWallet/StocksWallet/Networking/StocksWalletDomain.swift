@@ -28,7 +28,7 @@ public struct StocksWalletDomain: WebDomainProtocol {
 
     public func domainForBundle() -> String {
         #if DEBUG
-        return Domain.debug()
+        return Domain.prod()
         #endif
         return Domain.prod()
     }
